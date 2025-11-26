@@ -87,13 +87,14 @@ const BunQuaySection: React.FC = () => {
   );
 
   return (
-    <div className="bg-[#FFF8F0] py-20 lg:py-28 text-ocean-charcoal">
-      <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div className="bg-[#FFF8F0] py-20 lg:py-28 text-ocean-charcoal relative overflow-hidden">
+      <img src="https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/b9487c08-0a6d-4950-84a8-6f5dfb8f2d57.png?alt=media&token=e95ba874-8839-4bb4-a213-333e8a1d1373" alt="Decorative Banana Leaf" className="absolute bottom-0 -left-20 w-64 opacity-20 transform -rotate-45 hidden lg:block" />
+      <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Column: Image */}
         <div className="relative rounded-lg overflow-hidden shadow-2xl h-80 lg:h-full min-h-[400px]">
           <img 
-            src="https://images.unsplash.com/photo-1627343521619-563b72948712?q=80&w=1974&auto=format&fit=crop"
-            alt="Bún Quậy Phú Quốc"
+            src="https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/da0012b1-1250-482f-87d3-d953112c3325.jpeg?alt=media&token=262071ef-d7cd-4b67-9d7a-2415d8364b4c"
+            alt="Bún Quậy Kiến Xây Phú Quốc"
             className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
           />
            <div className="absolute inset-0 bg-black/20"></div>
@@ -102,14 +103,20 @@ const BunQuaySection: React.FC = () => {
 
         {/* Right Column: Interactive Content */}
         <div className="relative">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-chili-red">Bún Quậy</h2>
-          <p className="font-display text-xl mt-2 italic text-ocean-charcoal/90">Trải nghiệm tự tay pha chế</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-ocean-charcoal flex items-center">
+            Bún Quậy Kiến Xây
+            <i className="fas fa-feather-pointed text-2xl text-ocean-charcoal/50 ml-4"></i>
+          </h2>
+          <p className="font-display text-xl mt-2 italic text-ocean-charcoal/90">Linh Hồn Của Sự Hỗn Loạn Tinh Tế</p>
           <p className="mt-4 text-base leading-relaxed">
-            Điểm độc đáo của Bún Quậy chính là chén nước chấm "thần thánh" do chính bạn tự tay pha chế. Từng muỗng ớt, đường, muối và tắc được gia giảm theo khẩu vị riêng, tạo nên một bản giao hưởng hương vị không thể nào quên.
+            Nguồn gốc từ món Bún Tôm Bình Định, được gia đình Kiến Xây phát triển và "F5" tại Phú Quốc. Cái tên "Bún Quậy" dân dã ra đời do thực khách phải tự tay quậy đều chén nước chấm để gia vị hòa tan, cũng như quậy đều tô bún nóng hổi để chả tôm và cá chín tái. Đây không chỉ là món ăn, mà là một nghi thức trải nghiệm.
           </p>
           
           <div className="mt-8 p-6 bg-white/60 rounded-lg shadow-lg border border-white/20">
-            <h3 className="text-lg font-bold text-center mb-4">Góc Tương Tác: Pha Nước Chấm</h3>
+            <h3 className="text-lg font-bold text-center mb-4 flex items-center justify-center">
+              <i className="fa-solid fa-mortar-pestle mr-2 text-chili-red"></i>
+              Nghi Thức 'Tự Lao Động': Pha Chén Nước Chấm
+            </h3>
             <div className="grid grid-cols-2 gap-x-6 gap-y-4">
               <Slider name="chili" label="Ớt" value={sauce.chili} onChange={handleSauceChange} icon="fa-pepper-hot" />
               <Slider name="sugar" label="Đường" value={sauce.sugar} onChange={handleSauceChange} icon="fa-cubes-stacked" />
@@ -128,6 +135,16 @@ const BunQuaySection: React.FC = () => {
                </div>
             </div>
           </div>
+          <div className="mt-6 text-center">
+             <a 
+                href="https://bunquay.vn/he-thong-co-so/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-nuoc-mam-amber text-ocean-charcoal font-bold py-3 px-8 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out shadow-md min-h-[44px]"
+              >
+                Tìm cơ sở gần nhất
+              </a>
+          </div>
         </div>
       </div>
     </div>
@@ -136,27 +153,64 @@ const BunQuaySection: React.FC = () => {
 
 // === Gỏi Cá Trích Section Component ===
 const GoiCaTrichSection: React.FC = () => {
-    const ingredients = [
-        { name: "Cá Trích Tươi", description: "Đánh bắt trong ngày, đảm bảo vị ngọt và độ săn chắc.", icon: "fa-fish-fins" },
-        { name: "Dừa Nạo", description: "Vị béo ngậy tự nhiên từ dừa xiêm Phú Quốc.", icon: "fa-stroopwafel" },
-        { name: "Đậu Phộng & Hành", description: "Rang tay giòn tan, tăng cường kết cấu cho món ăn.", icon: "fa-seedling" },
-        { name: "Rau Rừng", description: "Hơn 10 loại rau rừng độc đáo chỉ có tại đảo Ngọc.", icon: "fa-leaf" }
-    ];
+    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+    const VideoModal = () => (
+        <div 
+          className="fixed inset-0 bg-ocean-charcoal/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div 
+            className="bg-sand-drift rounded-lg shadow-xl w-full max-w-3xl aspect-video relative" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setIsVideoModalOpen(false)} 
+              className="absolute -top-3 -right-3 text-sand-drift bg-chili-red rounded-full w-10 h-10 flex items-center justify-center text-xl z-10"
+              aria-label="Close video"
+            >
+                <i className="fa-solid fa-times"></i>
+            </button>
+            <iframe 
+                className="w-full h-full rounded-lg" 
+                src="https://www.youtube.com/embed/oWf3IN4Pn_M?autoplay=1" 
+                title="Cách ăn gỏi cá trích đúng chuẩn" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen>
+            </iframe>
+          </div>
+        </div>
+    );
     
     return (
-        <div className="relative py-20 lg:py-28 bg-fixed bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1615478503562-ec2d82e85b8a?q=80&w=2070&auto=format&fit=crop')"}}>
-            <div className="absolute inset-0 bg-banana-leaf/70"></div>
+        <div className="relative py-20 lg:py-28 bg-fixed bg-cover bg-center" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/2c6c06a8-274e-4e4b-b0b9-509569b76c81.jpeg?alt=media&token=962f3900-5323-455b-abcc-eb6f658ff039')"}}>
+            {isVideoModalOpen && <VideoModal />}
+            <div className="absolute inset-0 bg-ocean-charcoal/70"></div>
             <div className="relative container mx-auto px-4 sm:px-6 text-center text-white">
                 <h2 className="font-display text-4xl lg:text-5xl font-bold">Gỏi Cá Trích</h2>
-                <p className="font-display text-xl mt-2 italic">Vị Biển Trong Lành</p>
-                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {ingredients.map((item) => (
-                        <div key={item.name} className="bg-sand-drift/10 backdrop-blur-md rounded-lg p-6 border border-sand-drift/20 transform transition-all duration-300 hover:scale-105 hover:-rotate-3 hover:bg-sand-drift/20 shadow-lg">
-                            <i className={`fa-solid ${item.icon} text-4xl text-nuoc-mam-amber`}></i>
-                            <h3 className="font-display text-2xl mt-4 font-semibold">{item.name}</h3>
-                            <p className="mt-2 text-sm text-gray-200">{item.description}</p>
-                        </div>
-                    ))}
+                <p className="font-display text-xl mt-2 italic">Bản Giao Hưởng Của Rừng Và Biển</p>
+                <p className="mt-6 max-w-3xl mx-auto text-gray-300">
+                    Sự kết hợp táo bạo giữa cá trích tươi sống tái chanh và dừa nạo béo bùi. Bí quyết nằm ở rổ rau rừng đa dạng và chén nước chấm đậu phộng đậm đà, giúp món ăn hoàn toàn không tanh mà chỉ còn lại vị ngọt thanh khiết của đại dương.
+                </p>
+                <div className="mt-10">
+                    <button 
+                        onClick={() => setIsVideoModalOpen(true)}
+                        className="inline-block bg-chili-red text-white font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg min-h-[44px]"
+                    >
+                        <i className="fa-solid fa-play mr-2"></i>
+                        Xem cách ăn đúng chuẩn
+                    </button>
+                </div>
+
+                <div className="mt-12 pt-8 border-t border-sand-drift/20">
+                     <h3 className="font-display text-2xl font-semibold mb-4">Gợi ý địa điểm:</h3>
+                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <p>Nhà hàng Vườn Táo</p>
+                        <p>Quán Ra Khơi (131 đường 30/4)</p>
+                        <p>Sông Xanh (217 đường 30/4)</p>
+                     </div>
+                     <p className="mt-4 text-xs uppercase tracking-widest opacity-80">Giá tham khảo: 150.000 - 200.000 VNĐ / dĩa</p>
                 </div>
             </div>
         </div>
@@ -165,38 +219,39 @@ const GoiCaTrichSection: React.FC = () => {
 
 // === Bún Kèn Section Component ===
 const BunKenSection: React.FC = () => {
-  const fishSlides = [
+  const slides = [
     {
-      src: "https://images.unsplash.com/photo-1574948493823-6c99803657cb?q=80&w=2070&auto=format&fit=crop",
-      alt: "Cá Nhồng",
-      caption: "Cá Nhồng (Barracuda)"
+      src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/346e9596-f9fe-4467-8488-b2a8f89e1a8a.jpeg?alt=media&token=e939d899-73f1-419b-a010-09a5ab038c9d",
+      alt: "Nồi nước lèo Bún Kèn",
+      caption: "Nước lèo vàng ươm từ nghệ & cốt dừa"
     },
     {
-      src: "https://images.unsplash.com/photo-1628109325514-433a5626a57c?q=80&w=2070&auto=format&fit=crop",
-      alt: "Cá Lóc",
-      caption: "Cá Lóc (Snakehead fish)"
+      src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/42e8d356-9a3c-449e-b8d9-60144983df5a.jpeg?alt=media&token=42ef2753-3c27-4180-b2dd-63a20803c582",
+      alt: "Mâm Bún Kèn đầy đủ",
+      caption: "Thưởng thức cùng rau sống và đu đủ bào"
     }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () => setCurrentSlide(prev => (prev + 1) % fishSlides.length);
-  const prevSlide = () => setCurrentSlide(prev => (prev - 1 + fishSlides.length) % fishSlides.length);
+  const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="py-20 lg:py-28 bg-sand-drift text-ocean-charcoal">
-      <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-12 items-center">
+    <div className="py-20 lg:py-28 bg-sand-drift text-ocean-charcoal relative overflow-hidden">
+        <img src="https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/b9487c08-0a6d-4950-84a8-6f5dfb8f2d57.png?alt=media&token=e95ba874-8839-4bb4-a213-333e8a1d1373" alt="Decorative Banana Leaf" className="absolute top-0 -right-24 w-72 opacity-20 transform rotate-45 hidden lg:block" />
+      <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-12 items-center relative z-10">
         {/* Left Column: Text */}
         <div className="lg:col-span-3">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold">Bún Kèn</h2>
-          <p className="font-display text-xl mt-2 italic">Viên ngọc ẩn mình</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold">Bún Kèn Út Lượm</h2>
+          <p className="font-display text-xl mt-2 italic">Vị Ngọt Ngào Của Ký Ức Khmer</p>
           <p className="mt-4 text-base leading-relaxed max-w-2xl">
-            Bún Kèn là một món ăn dân dã, mang đậm dấu ấn giao thoa văn hóa Khmer. "Kèn" trong tiếng Khmer có nghĩa là "nấu bằng nước cốt dừa". Nước dùng béo ngậy từ dừa, vàng ươm màu nghệ từ <span className="font-bold text-nuoc-mam-amber">nước mắm cốt</span>, quyện với vị ngọt của cá xay nhuyễn, tạo nên một hương vị độc đáo khó tìm.
+            Một tuyệt phẩm chịu ảnh hưởng của ẩm thực Khmer. Khác với bún kèn đất liền dùng cá lóc, Bún Kèn Phú Quốc sử dụng cá biển (cá nhồng, cá ngân) xay nhuyễn, nấu cùng nước cốt dừa và nghệ tươi. Vị béo ngậy, ngọt thanh, ăn kèm đu đủ bào giòn tan tạo nên bữa sáng 'gây thương nhớ'.
           </p>
         </div>
         {/* Right Column: Image Slider */}
         <div className="lg:col-span-2 relative h-80 w-full">
           <div className="relative h-full w-full rounded-lg overflow-hidden shadow-2xl">
-            {fishSlides.map((slide, index) => (
+            {slides.map((slide, index) => (
               <div
                 key={slide.alt}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
@@ -208,10 +263,10 @@ const BunKenSection: React.FC = () => {
             ))}
             <SteamEffect />
           </div>
-          <button onClick={prevSlide} className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white/80 text-ocean-charcoal w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-colors">
+          <button onClick={prevSlide} className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-ocean-charcoal w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all min-h-[44px]">
             <i className="fa-solid fa-chevron-left"></i>
           </button>
-          <button onClick={nextSlide} className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white/80 text-ocean-charcoal w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-colors">
+          <button onClick={nextSlide} className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-ocean-charcoal w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all min-h-[44px]">
             <i className="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -255,12 +310,12 @@ const GaRaySection: React.FC = () => {
     );
 
     return (
-        <div className="py-20 lg:py-28 bg-kraft-paper text-ocean-charcoal">
+        <div className="py-20 lg:py-28 bg-cover bg-center text-ocean-charcoal" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/21a59253-33df-4034-8c83-05b6301389e7.jpeg?alt=media&token=db2a9d86-a249-4113-98fe-d599c90f23fd')"}}>
             <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
                  {/* Left Column: Image with dashed border */}
-                <div className="p-2 border-2 border-dashed border-ocean-charcoal/40 rounded-lg">
+                <div className="p-2 border-2 border-dashed border-ocean-charcoal/40 rounded-lg bg-sand-drift/50 backdrop-blur-sm">
                     <img
-                        src="https://images.unsplash.com/photo-1618018094441-073c1c91535a?q=80&w=1974&auto=format&fit=crop"
+                        src="https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/9a370e06-d249-43c2-aa74-b5a7962eb020.jpeg?alt=media&token=80b3d1b8-2e06-4b68-b80c-c662885994f7"
                         alt="Gà Rẫy Phú Quốc luộc"
                         className="w-full h-full object-cover rounded-md"
                     />
@@ -274,7 +329,7 @@ const GaRaySection: React.FC = () => {
                     </p>
                     <div className="mt-8">
                         <h3 className="text-lg font-bold mb-2">Gợi ý quán ngon:</h3>
-                        <div className="bg-white/50 rounded-lg p-4 shadow-inner">
+                        <div className="bg-sand-drift/80 backdrop-blur-sm rounded-lg p-4 shadow-inner">
                             {restaurants.map((resto, index) => (
                                 <AccordionItem
                                     key={resto.name}
@@ -308,7 +363,7 @@ const CrabModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
       >
         <button 
           onClick={onClose} 
-          className="absolute top-2 right-2 text-gray-500 hover:text-chili-red transition-colors w-12 h-12 flex items-center justify-center text-2xl"
+          className="absolute top-2 right-2 text-gray-500 hover:text-chili-red transition-colors w-12 h-12 flex items-center justify-center text-2xl min-h-[44px] min-w-[44px]"
           aria-label="Close modal"
         >
             <i className="fa-solid fa-times"></i>
@@ -329,29 +384,15 @@ const CrabModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
 // === Ghẹ Hàm Ninh Section Component ===
 const GheHamNinhSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const rippleRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const rippleElement = rippleRef.current;
-    if (rippleElement && (window as any).jQuery) {
-      (window as any).jQuery(rippleElement).ripples({ perturbance: 0.04 });
-      return () => {
-        if ((window as any).jQuery(rippleElement).data('ripples')) {
-          (window as any).jQuery(rippleElement).ripples('destroy');
-        }
-      };
-    }
-  }, []);
-
+  
   return (
     <div className="bg-sand-drift py-20 lg:py-28 overflow-hidden">
         <CrabModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Image */}
              <div 
-                ref={rippleRef}
                 className="w-full h-96 lg:min-h-[450px] rounded-lg shadow-2xl bg-cover bg-center"
-                style={{backgroundImage: "url('https://images.unsplash.com/photo-1596818161746-2f085c33230a?q=80&w=1974&auto=format&fit=crop')"}}
+                style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/5f6174a7-b08e-4a66-b328-91040449dae3.jpeg?alt=media&token=3b3d9735-961d-444a-9351-29474775083f')"}}
                 aria-label="Ghẹ Hàm Ninh hấp"
             ></div>
             {/* Right Column: Content */}
@@ -382,29 +423,11 @@ const GheHamNinhSection: React.FC = () => {
 
 // === Reusable Ripple Image Component ===
 const RippleImage: React.FC<{ name: string, src: string, glow?: boolean }> = ({ name, src, glow }) => {
-    const rippleRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const rippleElement = rippleRef.current;
-        if (rippleElement && (window as any).jQuery) {
-            (window as any).jQuery(rippleElement).ripples({
-                perturbance: 0.04,
-            });
-            return () => {
-                if ((window as any).jQuery(rippleElement).data('ripples')) {
-                    (window as any).jQuery(rippleElement).ripples('destroy');
-                }
-            };
-        }
-    }, []);
-
     return (
         <div 
-            ref={rippleRef} 
             className="relative group overflow-hidden rounded-lg shadow-lg w-full h-40 bg-cover bg-center transition-all duration-500"
             style={{ 
                 backgroundImage: `url(${src})`,
-                // FIX: Replaced undefined `tailwind` variable with a hardcoded hex color string.
                 filter: glow ? `drop-shadow(0 0 1.2rem #D9770680)` : 'none'
             }}
         >
@@ -414,14 +437,34 @@ const RippleImage: React.FC<{ name: string, src: string, glow?: boolean }> = ({ 
     );
 };
 
+// === Reusable YouTube Short Component ===
+const YoutubeShortCard: React.FC<{ videoId: string }> = ({ videoId }) => {
+  return (
+    <div className="col-span-2 rounded-lg overflow-hidden shadow-lg">
+      <div className="aspect-w-9 aspect-h-16">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="w-full h-full"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
 
 // === Nhum Biển Section Component ===
 const NhumBienSection: React.FC = () => {
     const preparations = [
-        { name: "Nướng mỡ hành", src: "https://images.unsplash.com/photo-1599665324458-57a312e726ae?q=80&w=1974&auto=format&fit=crop", glow: true },
-        { name: "Ăn sống (Sashimi)", src: "https://images.unsplash.com/photo-1626203322979-53758b9b4f2c?q=80&w=2070&auto=format&fit=crop", glow: false },
-        { name: "Cháo nhum", src: "https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=1964&auto=format&fit=crop", glow: false },
-        { name: "Trứng hấp", src: "https://plus.unsplash.com/premium_photo-1673833249971-4a11f7c32b53?q=80&w=1974&auto=format&fit=crop", glow: false }
+        { name: "Nướng trên than", src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/6ca31a47-c918-479c-b17f-449a024c08e5.jpeg?alt=media&token=9825b290-9c04-41d3-a5e2-63b7115da7e9", glow: true },
+        { name: "Nướng mỡ hành", src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/e0d16c5c-6b3a-446a-93be-101f3e9c8088.jpeg?alt=media&token=60abebc6-302c-47b7-810a-37e40b3951f2", glow: false },
+        { name: "Cận cảnh trứng nhum", src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/bd450005-593b-4811-ad81-e3e18a93ac9e.jpeg?alt=media&token=c83a7500-1c64-42f0-a006-03c683b584d4", glow: false },
+        { name: "Nướng đậu phộng", src: "https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/c4e7235a-0639-4d0f-96a8-f7b5398d249f.jpeg?alt=media&token=6d5f7566-728b-4b11-9a74-b53298c4302c", glow: false }
     ];
 
     return (
@@ -437,6 +480,7 @@ const NhumBienSection: React.FC = () => {
                 </div>
                 {/* Right Column: Image Grid (order first on desktop) */}
                 <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                     <YoutubeShortCard videoId="QvIJB8XohgQ" />
                     {preparations.map(p => (
                        <RippleImage key={p.name} name={p.name} src={p.src} glow={p.glow} />
                     ))}
@@ -469,17 +513,18 @@ const App: React.FC = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out text-ocean-charcoal ${
           isScrolled 
             ? 'bg-sand-drift/95 backdrop-blur-sm shadow-md' 
-            : 'bg-transparent text-white'
+            : 'bg-transparent'
         }`}
       >
         <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
           <div className="font-display text-xl font-bold tracking-wider">
             <a href="#hero">
-                <span className={isScrolled ? 'text-nuoc-mam-amber' : 'text-sand-drift'}>Phú Quốc</span> Cuisine
+                <span className={isScrolled ? 'text-nuoc-mam-amber' : 'text-sand-drift'}>Phú Quốc</span>
+                <span className={isScrolled ? 'text-ocean-charcoal' : 'text-sand-drift'}> Cuisine</span>
             </a>
           </div>
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wider uppercase">
+          <ul className={`hidden md:flex space-x-8 items-center text-sm font-medium tracking-wider uppercase ${isScrolled ? 'text-ocean-charcoal' : 'text-sand-drift'}`}>
             <li><a href="#hero" className="hover:text-chili-red transition-colors">Trang chủ</a></li>
             <li><a href="#dishes" className="hover:text-chili-red transition-colors">Thực đơn</a></li>
             <li><a href="#map" className="hover:text-chili-red transition-colors">Bản đồ</a></li>
@@ -487,7 +532,18 @@ const App: React.FC = () => {
           </ul>
            {/* Mobile Menu Button */}
           <button className="md:hidden z-[101]" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            <ChopsticksIcon isOpen={isMenuOpen} />
+            <div className={`w-8 h-8 relative flex items-center justify-center`}>
+                <div
+                    className={`absolute w-full h-1 rounded-full transition-transform duration-300 ease-in-out ${isScrolled ? 'bg-ocean-charcoal' : 'bg-sand-drift'} ${
+                    isMenuOpen ? 'rotate-45' : '-translate-y-2 rotate-6'
+                    }`}
+                ></div>
+                <div
+                    className={`absolute w-full h-1 rounded-full transition-transform duration-300 ease-in-out ${isScrolled ? 'bg-ocean-charcoal' : 'bg-sand-drift'} ${
+                    isMenuOpen ? '-rotate-45' : 'translate-y-2 -rotate-6'
+                    }`}
+                ></div>
+            </div>
           </button>
         </nav>
       </header>
@@ -515,7 +571,7 @@ const App: React.FC = () => {
           {/* Layer 1: Sea Background */}
           <div 
             className="absolute inset-0 z-0 bg-cover bg-center bg-fixed" 
-            style={{backgroundImage: "url('https://images.unsplash.com/photo-1541633596482-a1a7a39d5b03?q=80&w=2070&auto=format&fit=crop')"}}
+            style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/15f606e3-f67f-4351-8b50-3294332997e3.jpeg?alt=media&token=48f2c34c-d9c9-4a9f-bf44-d922a94f6c44')"}}
             aria-hidden="true"
           ></div>
           <div className="absolute inset-0 z-1 bg-ocean-charcoal/60" aria-hidden="true"></div>
