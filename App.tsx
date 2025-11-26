@@ -1,6 +1,18 @@
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 
+// === Reusable Section Divider ===
+const SectionDivider: React.FC<{ color: string }> = ({ color }) => {
+  return (
+    <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]" style={{ transform: 'translateY(1px)' }}>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[50px] sm:h-[80px] lg:h-[120px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-17,148.6-18.46,235.1-1.89,68.35,13.1,134.36,54.54,209.7,73.58,69.21,18,138.1,24.88,209.4,13.08,36.15-6,69.85-17.84,104.4-29.34C1282.17,42.44,1200,120,1200,120H0V0C0,0,93.84,56.44,321.39,56.44Z" style={{ fill: color }}></path>
+        </svg>
+    </div>
+  );
+};
+
+
 // === Reusable Chopsticks Icon for Mobile Menu ===
 const ChopsticksIcon: React.FC<{ isOpen: boolean }> = ({ isOpen }) => (
     <div className="w-8 h-8 relative flex items-center justify-center">
@@ -147,6 +159,7 @@ const BunQuaySection: React.FC = () => {
           </div>
         </div>
       </div>
+      <SectionDivider color="#13080C" />
     </div>
   );
 };
@@ -184,7 +197,7 @@ const GoiCaTrichSection: React.FC = () => {
     );
     
     return (
-        <div className="relative py-20 lg:py-28 bg-fixed bg-cover bg-center" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/2c6c06a8-274e-4e4b-b0b9-509569b76c81.jpeg?alt=media&token=962f3900-5323-455b-abcc-eb6f658ff039')"}}>
+        <div className="relative py-20 lg:py-28 bg-fixed bg-cover bg-center -mt-[50px] sm:-mt-[80px] lg:-mt-[120px]" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/2c6c06a8-274e-4e4b-b0b9-509569b76c81.jpeg?alt=media&token=962f3900-5323-455b-abcc-eb6f658ff039')"}}>
             {isVideoModalOpen && <VideoModal />}
             <div className="absolute inset-0 bg-ocean-charcoal/70"></div>
             <div className="relative container mx-auto px-4 sm:px-6 text-center text-white">
@@ -213,6 +226,7 @@ const GoiCaTrichSection: React.FC = () => {
                      <p className="mt-4 text-xs uppercase tracking-widest opacity-80">Giá tham khảo: 150.000 - 200.000 VNĐ / dĩa</p>
                 </div>
             </div>
+            <SectionDivider color="#F9F9F9" />
         </div>
     );
 };
@@ -237,7 +251,7 @@ const BunKenSection: React.FC = () => {
   const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="py-20 lg:py-28 bg-sand-drift text-ocean-charcoal relative overflow-hidden">
+    <div className="py-20 lg:py-28 bg-sand-drift text-ocean-charcoal relative overflow-hidden -mt-[50px] sm:-mt-[80px] lg:-mt-[120px]">
         <img src="https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/b9487c08-0a6d-4950-84a8-6f5dfb8f2d57.png?alt=media&token=e95ba874-8839-4bb4-a213-333e8a1d1373" alt="Decorative Banana Leaf" className="absolute top-0 -right-24 w-72 opacity-20 transform rotate-45 hidden lg:block" />
       <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-12 items-center relative z-10">
         {/* Left Column: Text */}
@@ -271,6 +285,7 @@ const BunKenSection: React.FC = () => {
           </button>
         </div>
       </div>
+      <SectionDivider color="#EFEBE9" />
     </div>
   );
 };
@@ -310,7 +325,7 @@ const GaRaySection: React.FC = () => {
     );
 
     return (
-        <div className="py-20 lg:py-28 bg-cover bg-center text-ocean-charcoal" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/21a59253-33df-4034-8c83-05b6301389e7.jpeg?alt=media&token=db2a9d86-a249-4113-98fe-d599c90f23fd')"}}>
+        <div className="relative py-20 lg:py-28 bg-cover bg-center text-ocean-charcoal -mt-[50px] sm:-mt-[80px] lg:-mt-[120px]" style={{backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/ai-studio-projects.appspot.com/o/21a59253-33df-4034-8c83-05b6301389e7.jpeg?alt=media&token=db2a9d86-a249-4113-98fe-d599c90f23fd')"}}>
             <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
                  {/* Left Column: Image with dashed border */}
                 <div className="p-2 border-2 border-dashed border-ocean-charcoal/40 rounded-lg bg-sand-drift/50 backdrop-blur-sm">
@@ -342,6 +357,7 @@ const GaRaySection: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <SectionDivider color="#F9F9F9" />
         </div>
     );
 };
@@ -386,7 +402,7 @@ const GheHamNinhSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   return (
-    <div className="bg-sand-drift py-20 lg:py-28 overflow-hidden">
+    <div className="bg-sand-drift py-20 lg:py-28 overflow-hidden relative -mt-[50px] sm:-mt-[80px] lg:-mt-[120px]">
         <CrabModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Image */}
@@ -417,6 +433,7 @@ const GheHamNinhSection: React.FC = () => {
                 </div>
             </div>
         </div>
+        <SectionDivider color="#13080C" />
     </div>
   );
 };
@@ -440,19 +457,17 @@ const RippleImage: React.FC<{ name: string, src: string, glow?: boolean }> = ({ 
 // === Reusable YouTube Short Component ===
 const YoutubeShortCard: React.FC<{ videoId: string }> = ({ videoId }) => {
   return (
-    <div className="col-span-2 rounded-lg overflow-hidden shadow-lg">
-      <div className="aspect-w-9 aspect-h-16">
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          className="w-full h-full"
-          loading="lazy"
-        ></iframe>
-      </div>
+    <div className="col-span-2 rounded-lg overflow-hidden shadow-lg aspect-[9/16]">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        className="w-full h-full"
+        loading="lazy"
+      ></iframe>
     </div>
   );
 };
@@ -468,7 +483,7 @@ const NhumBienSection: React.FC = () => {
     ];
 
     return (
-        <div className="bg-ocean-charcoal py-20 lg:py-28 text-sand-drift overflow-hidden">
+        <div className="bg-ocean-charcoal py-20 lg:py-28 text-sand-drift overflow-hidden relative -mt-[50px] sm:-mt-[80px] lg:-mt-[120px]">
             <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column: Content (order reversed on desktop) */}
                 <div className="order-2 lg:order-1">
@@ -488,6 +503,47 @@ const NhumBienSection: React.FC = () => {
             </div>
         </div>
     );
+};
+
+
+// === Map Placeholder Section ===
+const MapSection: React.FC = () => {
+  return (
+    <section id="map" className="bg-sand-drift py-20 text-center">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="font-display text-4xl lg:text-5xl font-bold text-ocean-charcoal">Bản Đồ Ẩm Thực</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-ocean-charcoal/80">
+          Khám phá vị trí các quán ăn ngon nhất trên bản đồ Phú Quốc. <br/> (Tính năng đang được phát triển)
+        </p>
+        <div className="mt-8 w-full max-w-4xl mx-auto h-96 bg-gray-300 rounded-lg shadow-lg flex items-center justify-center">
+           <i className="fa-solid fa-map-location-dot text-6xl text-gray-500"></i>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+// === Footer Component ===
+const Footer: React.FC = () => {
+  return (
+    <footer id="contact" className="bg-ocean-charcoal text-sand-drift py-12">
+      <div className="container mx-auto px-4 sm:px-6 text-center">
+        <h3 className="font-display text-2xl font-bold text-nuoc-mam-amber">Phú Quốc Cuisine</h3>
+        <p className="mt-2 text-sm max-w-md mx-auto text-gray-400">
+          Website dự thi "Đại sứ văn hóa" của học sinh trường THPT An Thới, với mục tiêu lan tỏa vẻ đẹp ẩm thực Đảo Ngọc.
+        </p>
+        <div className="mt-6 flex justify-center space-x-6">
+          <a href="#" className="hover:text-nuoc-mam-amber transition-colors"><i className="fab fa-facebook-f text-xl"></i></a>
+          <a href="#" className="hover:text-nuoc-mam-amber transition-colors"><i className="fab fa-instagram text-xl"></i></a>
+          <a href="#" className="hover:text-nuoc-mam-amber transition-colors"><i className="fab fa-youtube text-xl"></i></a>
+        </div>
+        <div className="mt-8 pt-6 border-t border-gray-700 text-xs text-gray-500">
+          <p>&copy; {new Date().getFullYear()} Trường THPT An Thới. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 
@@ -611,10 +667,11 @@ const App: React.FC = () => {
           <NhumBienSection />
         </section>
         
-        {/* Placeholder for future sections */}
-        <div id="map" className="h-32"></div>
-        <div id="contact" className="h-32"></div>
+        <MapSection />
+
       </main>
+
+      <Footer />
     </div>
   );
 };
