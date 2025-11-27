@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Dự Án - Đại Sứ Văn Hóa Phú Quốc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'sand-gold': '#C2B280',
+                        'sunset-orange': '#FF7F50',
+                        'tropical-green': '#2E8B57',
+                        'ocean-charcoal': '#1a202c',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-quicksand">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300 bg-ocean-charcoal shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+                Phú Quốc <span class="text-sand-gold">Cuisine</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Trang Chủ</a>
+                <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Thực Đơn</a>
+                <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold">Giới Thiệu</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Phú Quốc Landscape" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-ocean-charcoal/90 to-ocean-charcoal/40"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white animate-fade-in-up">
+                <span class="text-sand-gold uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Dự án Đại Sứ Văn Hóa</span>
+                <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-6 leading-tight">
+                    Hơn Cả Một <br/> Website Ẩm Thực
+                </h1>
+                <p class="text-lg text-gray-300 font-light leading-relaxed max-w-lg">
+                    Một bảo tàng số hóa lưu giữ và lan tỏa các giá trị văn hóa bản địa, khơi dậy niềm tự hào về Đảo Ngọc trong kỷ nguyên số.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        
+        <!-- Section 1: Vision & Context -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative fade-in-section" data-animation="slide-right">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-sand-gold/20 rounded-full blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop" alt="Văn hóa Việt Nam" class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                    <!-- School Badge Overlay -->
+                    <div class="absolute bottom-10 -right-10 bg-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
+                        <p class="text-ocean-charcoal font-bold font-playfair text-lg">Trường THPT An Thới</p>
+                        <p class="text-gray-500 text-sm mt-1">Cuộc thi "Đại sứ văn hóa Phú Quốc"</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in-section" data-animation="slide-left">
+                    <h2 class="text-4xl font-playfair font-bold text-ocean-charcoal mb-6">Tầm Nhìn & Sứ Mệnh</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Dự án <strong>"Đại sứ văn hóa Phú Quốc"</strong> không đơn thuần là một danh mục món ăn trực tuyến. Trong bối cảnh du lịch trải nghiệm lên ngôi, chúng tôi nhận thấy du khách không chỉ tìm kiếm "ăn gì" mà còn muốn thấu hiểu câu chuyện đằng sau mỗi món ăn.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Đây là một nỗ lực giáo dục mang tính chiến lược của <strong>Trường THPT An Thới</strong> nhằm kết hợp công nghệ hiện đại để bảo tồn di sản. Mỗi đường link, mỗi hình ảnh là một "đại sứ số", kể câu chuyện riêng biệt nhưng hòa quyện trong tổng thể văn hóa Đảo Ngọc.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="border-l-4 border-ocean-blue pl-4">
+                            <h4 class="font-bold text-ocean-blue text-xl mb-1">01.</h4>
+                            <p class="text-sm font-bold text-gray-700">Lưu Trữ Di Sản</p>
+                        </div>
+                        <div class="border-l-4 border-sand-gold pl-4">
+                            <h4 class="font-bold text-sand-gold text-xl mb-1">02.</h4>
+                            <p class="text-sm font-bold text-gray-700">Giáo Dục Thế Hệ Trẻ</p>
+                        </div>
+                        <div class="border-l-4 border-sunset-orange pl-4">
+                            <h4 class="font-bold text-sunset-orange text-xl mb-1">03.</h4>
+                            <p class="text-sm font-bold text-gray-700">Quảng Bá Du Lịch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Core Values (Grid) -->
+        <section class="bg-ocean-charcoal text-white py-24 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 fade-in-section" data-animation="slide-down">
+                    <span class="text-sand-gold uppercase tracking-widest text-sm font-bold">Chủ Đề Cuộc Thi</span>
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-3">4 Trụ Cột Phát Triển</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 fade-in-section" data-animation="fade-in-up" style="animation-delay: 0s;">
+                        <div class="w-14 h-14 bg-sand-gold rounded-full flex items-center justify-center text-ocean-charcoal text-2xl mb-6">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-playfair mb-3">Truyền Thống</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Tôn trọng nguyên bản, gìn giữ công thức và hương vị cha ông để lại qua hàng trăm năm.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 fade-in-section" data-animation="fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="w-14 h-14 bg-ocean-blue rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-playfair mb-3">Hiện Đại</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Ứng dụng công nghệ số, thiết kế tương tác (Interactive UI) để nâng tầm trải nghiệm người xem.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 fade-in-section" data-animation="fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="w-14 h-14 bg-sunset-orange rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-playfair mb-3">Hội Nhập</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Đưa văn hóa địa phương ra thế giới, sử dụng ngôn ngữ thiết kế chuẩn quốc tế.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 fade-in-section" data-animation="fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="w-14 h-14 bg-tropical-green rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-playfair mb-3">Phát Triển</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Hướng tới sự bền vững, bảo vệ môi trường biển và nguồn lợi thủy hải sản.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Design Philosophy -->
+        <section class="container mx-auto px-6 py-24">
+            <div class="bg-blue-50 rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 fade-in-section" data-animation="zoom-in-scroll">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-playfair font-bold text-ocean-charcoal mb-6">Triết Lý Thiết Kế: <br/> <span class="text-ocean-blue">Digital Terroir</span></h2>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        Chúng tôi áp dụng khái niệm <strong>"Thổ nhưỡng kỹ thuật số"</strong> (Digital Terroir). Website không sử dụng các khuôn mẫu có sẵn mà được thiết kế dựa trên bảng màu của chính hòn đảo:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-[#006994] rounded-full mr-3 border-2 border-white shadow-sm"></span>
+                            <span class="text-gray-700"><strong>Xanh Đại Dương:</strong> Sự tin cậy và chiều sâu văn hóa.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-[#C2B280] rounded-full mr-3 border-2 border-white shadow-sm"></span>
+                            <span class="text-gray-700"><strong>Vàng Cát:</strong> Sự mộc mạc, gần gũi của làng chài.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-[#FF7F50] rounded-full mr-3 border-2 border-white shadow-sm"></span>
+                            <span class="text-gray-700"><strong>Cam Hoàng Hôn:</strong> Kích thích vị giác và cảm xúc.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-2xl transform rotate-6 scale-95"></div>
+                    <img src="https://images.unsplash.com/photo-1583207804784-198ba4a3d784?q=80&w=2070&auto=format&fit=crop" alt="Design Moodboard" class="rounded-2xl shadow-2xl relative z-10 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-charcoal text-white py-12 relative text-center">
+        <div class="container mx-auto px-6 relative z-10">
+            <h3 class="text-2xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">Dự án thuộc bản quyền của nhóm tác giả Trường THPT An Thới. <br> Lan tỏa niềm tự hào văn hóa Việt.</p>
+            <a href="index.html" class="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-ocean-charcoal transition-all font-bold">
+                Trở Về Trang Chủ
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
