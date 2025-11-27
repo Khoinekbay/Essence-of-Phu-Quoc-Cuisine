@@ -40,9 +40,10 @@
     </nav>
 
     <!-- Parallax Hero Section with 8. Steam Animation -->
-    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gray-900">
         <div class="absolute inset-0 z-0">
-             <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/548031105_1623622588661459_3814897277212536003_n.jpg?stp=dst-jpg_s394x394_tt6&_nc_cat=100&ccb=1-7&_nc_sid=e21142&_nc_ohc=U-jBcTwTs9oQ7kNvwFJtHav&_nc_oc=AdnD1lypoVpa8zEH-Rai41W_wUijYuRqzldgAfU6ubDI0qCJLrbFi4dLhth5QBbzA-8&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=XyCt6deQlY2htT6fbmoxTg&oh=00_AfhdFGR6NDCSXcYiUQ9glzlYJaO6pQW0fdnWWaHUDBIgIg&oe=692CE2AE" 
+             <!-- Replaced broken FB link with Unsplash fallback -->
+             <img src="https://images.unsplash.com/photo-1634862718359-7d66e6a2a530?q=80&w=2070&auto=format&fit=crop" 
                   alt="Bún Quậy Background" 
                   class="parallax-bg w-full h-full object-cover"
                   data-speed="0.5">
@@ -157,6 +158,22 @@
     </footer>
 
     <script>
+        // Scroll Animation Logic (ADDED TO FIX INVISIBLE TEXT)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
         // Parallax script reuse
         window.addEventListener('scroll', () => {
             const parallaxBg = document.querySelector('.parallax-bg');
