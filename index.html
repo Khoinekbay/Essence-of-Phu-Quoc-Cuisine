@@ -169,7 +169,8 @@
                     <div class="min-h-[400px] card-flip relative w-full aspect-[3/4] md:aspect-auto md:h-[450px]">
                         <div class="w-full h-full card-flip-inner">
                             <!-- Front Face -->
-                            <div class="card-face w-full h-full rounded-2xl shadow-xl border border-white/50 overflow-hidden relative group">
+                            <!-- REMOVED 'relative' class to fix overlap issue -->
+                            <div class="card-face w-full h-full rounded-2xl shadow-xl border border-white/50 overflow-hidden group">
                                 <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp" alt="Gỏi Cá Trích" class="w-full h-full object-cover parallax-bg" data-speed="0.1">
                                 <!-- Overlay Hint -->
                                 <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -295,11 +296,31 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="font-serif text-4xl font-bold text-ocean-charcoal mb-8">Bản Đồ Ẩm Thực</h2>
             <p class="mb-10 text-lg text-gray-700 max-w-2xl mx-auto">Dễ dàng tìm kiếm các địa điểm ăn uống uy tín được người dân địa phương đề xuất.</p>
-            <div class="w-full h-96 bg-white/50 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-inner border border-white/60">
-                <p class="text-gray-500 italic">
-                    <i class="fa-solid fa-map-location-dot text-4xl mb-2 block"></i>
-                    Bản đồ tương tác sẽ được tích hợp tại đây (Google Maps Embed)
-                </p>
+            <div class="w-full h-[600px] bg-white p-3 rounded-2xl shadow-xl border border-white/60 relative overflow-hidden group">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251666.16875971665!2d103.87313838428574!3d10.228578297607736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a78c62b49eda17%3A0x8aa79fbb25a1b18e!2zUGjDuiBRdeG7kWM!5e0!3m2!1svi!2s!4v1716900000000!5m2!1svi!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-xl w-full h-full shadow-inner"
+                ></iframe>
+                
+                <!-- Helper overlay -->
+                <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-gray-200 flex items-center gap-2 text-sm text-gray-600 pointer-events-none">
+                    <i class="fa-solid fa-map-pin text-red-500"></i> Đảo Ngọc Phú Quốc
+                </div>
+            </div>
+            
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="https://www.google.com/maps/search/quán+ăn+ngon+Phú+Quốc" target="_blank" class="inline-flex items-center gap-2 bg-white text-ocean-charcoal font-semibold py-3 px-6 rounded-full hover:bg-nuoc-mam hover:text-white transition-all shadow-md">
+                    <i class="fa-brands fa-google"></i> Xem trên Google Maps
+                </a>
+                <a href="#thuc-don" class="inline-flex items-center gap-2 bg-teal-700 text-white font-semibold py-3 px-6 rounded-full hover:bg-teal-800 transition-all shadow-md">
+                    <i class="fa-solid fa-list-ul"></i> Xem Danh Sách Món
+                </a>
             </div>
         </div>
     </section>
