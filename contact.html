@@ -30,7 +30,7 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-quicksand">
+<body class="bg-gray-50 text-gray-800 font-quicksand" data-music="https://cdn.pixabay.com/audio/2022/03/24/audio_34b6b663b9.mp3">
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300 bg-ocean-charcoal shadow-lg">
@@ -44,9 +44,11 @@
                 <a href="index.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.home">Trang Chủ</a>
                 <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.menu">Thực Đơn</a>
                 <a href="about.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.about">Giới Thiệu</a>
-                <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold" data-i18n="nav.contact">Liên Hệ</a>
-                <button class="lang-btn text-white hover:text-sand-gold transition-colors font-medium text-sm border border-white/50 px-3 py-1 rounded-full hover:bg-white/10">
-                    VN | EN
+                <!-- Contact Removed -->
+                <button class="lang-toggle relative flex items-center bg-white/20 rounded-full p-1 w-20 h-8 border border-white/30 backdrop-blur-sm transition-all focus:outline-none cursor-pointer shadow-sm">
+                    <div class="lang-indicator absolute left-1 top-1 h-6 w-9 bg-sand-gold rounded-full shadow-md transition-transform duration-300 ease-in-out"></div>
+                    <span class="text-vn relative z-10 w-1/2 text-center text-xs font-bold text-ocean-charcoal transition-colors duration-300">VN</span>
+                    <span class="text-en relative z-10 w-1/2 text-center text-xs font-bold text-white transition-colors duration-300">EN</span>
                 </button>
             </div>
 
@@ -61,9 +63,11 @@
             <a href="index.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.home">Trang Chủ</a>
             <a href="index.html#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.menu">Thực Đơn</a>
             <a href="about.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.about">Giới Thiệu</a>
-            <a href="#" class="mobile-link text-2xl font-playfair text-sand-gold" data-i18n="nav.contact">Liên Hệ</a>
-            <button class="lang-btn mobile-link text-xl font-playfair text-white hover:text-sand-gold border border-white/50 px-6 py-2 rounded-full">
-                VN | EN
+            <!-- Contact Removed -->
+            <button class="lang-toggle mobile-link relative flex items-center bg-white/20 rounded-full p-1 w-24 h-10 border border-white/30 backdrop-blur-sm transition-all focus:outline-none cursor-pointer shadow-sm">
+                <div class="lang-indicator absolute left-1 top-1 h-8 w-11 bg-sand-gold rounded-full shadow-md transition-transform duration-300 ease-in-out"></div>
+                <span class="text-vn relative z-10 w-1/2 text-center text-sm font-bold text-ocean-charcoal transition-colors duration-300">VN</span>
+                <span class="text-en relative z-10 w-1/2 text-center text-sm font-bold text-white transition-colors duration-300">EN</span>
             </button>
         </div>
     </nav>
@@ -175,7 +179,7 @@
                 <a href="index.html#menu" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.menu">Thực Đơn</a>
                 <a href="index.html#map-section" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.map">Bản Đồ</a>
                 <a href="about.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.about">Giới Thiệu</a>
-                <a href="contact.html" class="text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.contact">Liên Hệ</a>
+                <!-- Contact Removed -->
             </div>
         </div>
     </footer>
@@ -183,6 +187,7 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="i18n.js"></script>
+    <script src="music.js"></script>
     <script>
         // Scroll Animation
         const observer = new IntersectionObserver((entries) => {

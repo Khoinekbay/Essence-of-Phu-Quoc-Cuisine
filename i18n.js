@@ -26,7 +26,21 @@ const translations = {
         "map.title": "Bản Đồ <span class='text-ocean-blue'>Ẩm Thực</span>",
         "map.desc": "Khám phá vị trí những quán ăn ngon nức tiếng tại Phú Quốc. Nhấn vào các biểu tượng để xem chi tiết.",
         "footer.desc": "Dự án quảng bá du lịch và ẩm thực đảo ngọc, lan tỏa hương vị truyền thống đến bạn bè năm châu.",
-        "footer.design": "&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad."
+        "footer.design": "&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.",
+        
+        // Nutrition Section
+        "nutrition.title": "Giá Trị Dinh Dưỡng",
+        "nutrition.calories": "Năng Lượng",
+        "nutrition.protein": "Chất Đạm",
+        "nutrition.ingredients": "Thành Phần Chính",
+        
+        // Dish Ingredients
+        "dish.bunquay.ing": "Mực Tươi, Tôm, Chả Cá, Bún Gạo",
+        "dish.goicatrich.ing": "Cá Trích Tươi, Dừa Nạo, Rau Rừng, Bánh Tráng",
+        "dish.bunken.ing": "Cá Nhàu/Ngân, Nước Cốt Dừa, Nghệ, Đu Đủ",
+        "dish.ghe.ing": "Ghẹ Hàm Ninh Tươi Sống, Muối Tiêu Chanh",
+        "dish.nhum.ing": "Gạch Nhum, Trứng Gà, Mỡ Hành, Đậu Phộng",
+        "dish.garay.ing": "Gà Thả Vườn, Tiêu Phú Quốc, Nước Mắm"
     },
     en: {
         "nav.home": "Home",
@@ -54,42 +68,94 @@ const translations = {
         "map.title": "Culinary <span class='text-ocean-blue'>Map</span>",
         "map.desc": "Discover famous local food spots in Phu Quoc. Click markers for details.",
         "footer.desc": "A project to promote tourism and cuisine of the Pearl Island, spreading traditional flavors to the world.",
-        "footer.design": "&copy; 2025-2026 10C1 High School An Thoi. Designed with Khoiisthebad."
+        "footer.design": "&copy; 2025-2026 10C1 High School An Thoi. Designed with Khoiisthebad.",
+
+        // Nutrition Section
+        "nutrition.title": "Nutrition Facts",
+        "nutrition.calories": "Calories",
+        "nutrition.protein": "Protein",
+        "nutrition.ingredients": "Main Ingredients",
+
+        // Dish Ingredients
+        "dish.bunquay.ing": "Fresh Squid, Shrimp, Fish Cake, Rice Noodles",
+        "dish.goicatrich.ing": "Fresh Herring, Grated Coconut, Wild Herbs, Rice Paper",
+        "dish.bunken.ing": "Nonu/Ngan Fish, Coconut Milk, Turmeric, Papaya",
+        "dish.ghe.ing": "Fresh Blue Crab, Salt & Pepper Lime Sauce",
+        "dish.nhum.ing": "Sea Urchin Roe, Egg, Scallion Oil, Peanuts",
+        "dish.garay.ing": "Free-range Chicken, Phu Quoc Pepper, Fish Sauce"
     }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const langBtns = document.querySelectorAll('.lang-btn');
+    // 1. Get current language
     let currentLang = localStorage.getItem('lang') || 'vi';
 
-    const updateContent = () => {
+    // 2. Function to update text content
+    const updateContent = (lang) => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (translations[currentLang] && translations[currentLang][key]) {
-                el.innerHTML = translations[currentLang][key]; // Use innerHTML to support HTML tags in translation
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
             }
         });
         
-        // Update placeholders
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
              const key = el.getAttribute('data-i18n-placeholder');
-             if (translations[currentLang] && translations[currentLang][key]) {
-                 el.placeholder = translations[currentLang][key];
+             if (translations[lang] && translations[lang][key]) {
+                 el.placeholder = translations[lang][key];
              }
         });
-
-        // Update button text logic if needed, or keep as static "VN | EN"
     };
 
-    langBtns.forEach(btn => {
+    // 3. Function to update UI (Visual Toggle)
+    const updateToggleUI = (lang) => {
+        document.querySelectorAll('.lang-toggle').forEach(toggle => {
+            const indicator = toggle.querySelector('.lang-indicator');
+            const textVN = toggle.querySelector('.text-vn');
+            const textEN = toggle.querySelector('.text-en');
+            
+            // Remove all inline styles first to ensure clean state
+            indicator.removeAttribute('style');
+
+            if (lang === 'vi') {
+                indicator.style.transform = 'translateX(0)';
+                textVN.classList.remove('text-white');
+                textVN.classList.add('text-ocean-charcoal'); // Active Color
+                textEN.classList.remove('text-ocean-charcoal');
+                textEN.classList.add('text-white'); // Inactive Color
+            } else {
+                indicator.style.transform = 'translateX(100%)'; 
+                // Adjust for padding if necessary, roughly 28px or 100% of width minus padding
+                
+                textVN.classList.remove('text-ocean-charcoal');
+                textVN.classList.add('text-white'); // Inactive Color
+                textEN.classList.remove('text-white');
+                textEN.classList.add('text-ocean-charcoal'); // Active Color
+            }
+        });
+    };
+
+    // 4. Bind Events
+    document.querySelectorAll('.lang-toggle').forEach(btn => {
+        // Clone button to remove old event listeners if any (optional safety)
+        // btn.replaceWith(btn.cloneNode(true)); 
+        // Re-select after clone if needed, but for now direct bind:
+        
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            // Toggle Logic
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
+            
+            // Save & Update
             localStorage.setItem('lang', currentLang);
-            updateContent();
+            updateContent(currentLang);
+            updateToggleUI(currentLang);
+            
+            console.log("Language switched to:", currentLang); // Debug
         });
     });
 
-    // Initial load
-    updateContent();
+    // 5. Initial Run
+    updateContent(currentLang);
+    updateToggleUI(currentLang);
 });
