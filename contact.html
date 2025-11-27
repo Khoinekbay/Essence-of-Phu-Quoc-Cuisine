@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Đại Sứ Văn Hóa Phú Quốc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'sand-gold': '#C2B280',
+                        'sunset-orange': '#FF7F50',
+                        'tropical-green': '#2E8B57',
+                        'ocean-charcoal': '#1a202c',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-quicksand">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300 bg-ocean-charcoal shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md relative z-50">
+                Phú Quốc <span class="text-sand-gold">Cuisine</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Trang Chủ</a>
+                <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Thực Đơn</a>
+                <a href="about.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Giới Thiệu</a>
+                <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold">Liên Hệ</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl relative z-50 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="fixed inset-0 bg-ocean-charcoal/95 z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden backdrop-blur-xl">
+            <a href="index.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Trang Chủ</a>
+            <a href="index.html#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Thực Đơn</a>
+            <a href="about.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Giới Thiệu</a>
+            <a href="#" class="mobile-link text-2xl font-playfair text-sand-gold">Liên Hệ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Phu Quoc Contact" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-ocean-charcoal/80 to-ocean-charcoal/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <span class="text-sand-gold uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Kết Nối Cộng Đồng</span>
+            <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4 leading-tight">Liên Hệ Với Chúng Tôi</h1>
+            <p class="text-lg text-gray-300 font-light max-w-xl mx-auto">
+                Bạn có câu hỏi về cuộc thi hoặc muốn đóng góp ý kiến về nội dung? Hãy gửi tin nhắn cho ban tổ chức.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20 container mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Info & Form -->
+            <div class="space-y-12 fade-in-section" data-animation="slide-right">
+                
+                <!-- Info Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-ocean-blue hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-ocean-blue text-xl mb-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Địa Chỉ</h3>
+                        <p class="text-gray-600 text-sm">Trường THPT An Thới</p>
+                        <p class="text-gray-600 text-sm">Phường An Thới, TP. Phú Quốc, Kiên Giang</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-sunset-orange hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-sunset-orange text-xl mb-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Email & Điện Thoại</h3>
+                        <p class="text-gray-600 text-sm">c3anthoi.kiengiang@moet.edu.vn</p>
+                        <p class="text-gray-600 text-sm">(+84) 297 3844 000</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl">
+                    <h3 class="text-2xl font-playfair font-bold text-ocean-charcoal mb-6">Gửi Tin Nhắn</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Họ Tên</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-ocean-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="Nguyễn Văn A">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-ocean-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="email@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Chủ Đề</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-ocean-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all">
+                                <option>Góp ý nội dung</option>
+                                <option>Hỏi về cuộc thi</option>
+                                <option>Hợp tác truyền thông</option>
+                                <option>Khác</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Nội Dung</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-ocean-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="Nhập lời nhắn của bạn..."></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-ocean-charcoal text-white font-bold py-4 rounded-xl hover:bg-ocean-blue transition-colors shadow-lg transform active:scale-95">
+                            Gửi Đi <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Map Section -->
+            <div class="fade-in-section h-full min-h-[400px]" data-animation="slide-left">
+                <div class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <div id="contact-map" class="w-full h-full z-10"></div>
+                    <!-- Decorative Badge -->
+                    <div class="absolute top-4 right-4 z-[1000] bg-white/90 backdrop-blur p-3 rounded-xl shadow-lg max-w-[200px]">
+                        <p class="text-xs font-bold text-ocean-charcoal uppercase tracking-wider mb-1">Vị Trí</p>
+                        <p class="text-sm text-ocean-blue font-bold">An Thới, Phú Quốc</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-charcoal text-white py-12 relative text-center">
+        <div class="container mx-auto px-6 relative z-10">
+            <h3 class="text-2xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto text-sm">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
+            <a href="index.html" class="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-ocean-charcoal transition-all font-bold">
+                Trở Về Trang Chủ
+            </a>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Leaflet Map Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const schoolLat = 10.0286; // Approximate coordinates for An Thoi area
+            const schoolLng = 104.0129;
+
+            const map = L.map('contact-map', {
+                center: [schoolLat, schoolLng],
+                zoom: 14,
+                scrollWheelZoom: false
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                maxZoom: 19
+            }).addTo(map);
+
+            const customIcon = L.divIcon({
+                className: 'custom-school-marker',
+                html: `<div class="w-12 h-12 bg-ocean-blue rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-xl animate-bounce-slow">
+                        <i class="fas fa-graduation-cap"></i>
+                       </div>`,
+                iconSize: [48, 48],
+                iconAnchor: [24, 48],
+                popupAnchor: [0, -48]
+            });
+
+            L.marker([schoolLat, schoolLng], { icon: customIcon }).addTo(map)
+                .bindPopup('<div class="text-center font-bold">Trường THPT An Thới<br><span class="text-xs font-normal text-gray-500">Điểm tập kết dự án</span></div>')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
