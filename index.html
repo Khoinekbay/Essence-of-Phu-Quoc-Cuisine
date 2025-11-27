@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -71,11 +70,15 @@
             <a href="#" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md relative z-50">Phú Quốc <span class="text-sand-gold">Cuisine</span></a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm">Trang Chủ</a>
-                <a href="#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm">Thực Đơn</a>
-                <a href="#map-section" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm">Bản Đồ</a>
-                <a href="about.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm">Giới Thiệu</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm" data-i18n="nav.home">Trang Chủ</a>
+                <a href="#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm" data-i18n="nav.menu">Thực Đơn</a>
+                <a href="#map-section" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm" data-i18n="nav.map">Bản Đồ</a>
+                <a href="about.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm" data-i18n="nav.about">Giới Thiệu</a>
+                <a href="contact.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg drop-shadow-sm" data-i18n="nav.contact">Liên Hệ</a>
+                <button class="lang-btn text-white hover:text-sand-gold transition-colors font-medium text-sm border border-white/50 px-3 py-1 rounded-full hover:bg-white/10">
+                    VN | EN
+                </button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -86,10 +89,14 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="fixed inset-0 bg-ocean-charcoal/95 z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden backdrop-blur-xl">
-            <a href="#home" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Trang Chủ</a>
-            <a href="#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Thực Đơn</a>
-            <a href="#map-section" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Bản Đồ</a>
-            <a href="about.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Giới Thiệu</a>
+            <a href="#home" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.home">Trang Chủ</a>
+            <a href="#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.menu">Thực Đơn</a>
+            <a href="#map-section" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.map">Bản Đồ</a>
+            <a href="about.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.about">Giới Thiệu</a>
+            <a href="contact.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.contact">Liên Hệ</a>
+            <button class="lang-btn mobile-link text-xl font-playfair text-white hover:text-sand-gold border border-white/50 px-6 py-2 rounded-full">
+                VN | EN
+            </button>
         </div>
     </nav>
 
@@ -107,17 +114,17 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-ocean-charcoal z-0"></div>
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-            <p class="text-sand-gold text-lg md:text-2xl mb-4 font-medium tracking-widest uppercase animate-slide-down">Khám phá Đảo Ngọc</p>
-            <h1 class="text-4xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-2xl animate-fade-in-up">
+            <p class="text-sand-gold text-lg md:text-2xl mb-4 font-medium tracking-widest uppercase animate-slide-down" data-i18n="hero.subtitle">Khám phá Đảo Ngọc</p>
+            <h1 class="text-4xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-2xl animate-fade-in-up" data-i18n="hero.title">
                 Hương Vị <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-sand-gold to-yellow-200">Trăm Năm</span>
             </h1>
-            <p class="text-gray-200 text-base md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+            <p class="text-gray-200 text-base md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;" data-i18n="hero.desc">
                 Hành trình ẩm thực đánh thức mọi giác quan, từ vị mặn mòi của biển cả đến hương thơm nồng nàn của tiêu và rượu sim.
             </p>
             
             <div class="flex flex-col md:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
                 <a href="#menu" class="btn-shimmer btn-bounce-hover group bg-sand-gold text-ocean-charcoal px-8 py-3 rounded-full font-bold text-lg hover:bg-white transition-all transform shadow-[0_0_20px_rgba(194,178,128,0.5)] flex items-center justify-center">
-                    <span>Khám Phá Ngay</span>
+                    <span data-i18n="hero.btn">Khám Phá Ngay</span>
                     <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -126,7 +133,7 @@
         <!-- Scroll Down Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow z-10 text-white text-opacity-70">
             <div class="flex flex-col items-center gap-2">
-                <span class="text-xs tracking-widest uppercase">Cuộn xuống</span>
+                <span class="text-xs tracking-widest uppercase" data-i18n="scroll.down">Cuộn xuống</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
@@ -140,8 +147,8 @@
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-12 md:mb-16 fade-in-section" data-animation="slide-down">
-                <span class="text-sand-gold text-lg font-bold tracking-widest uppercase mb-2 block">Thực Đơn</span>
-                <h2 class="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">Tinh Hoa <span class="italic text-ocean-blue">Ẩm Thực</span></h2>
+                <span class="text-sand-gold text-lg font-bold tracking-widest uppercase mb-2 block" data-i18n="menu.subtitle">Thực Đơn</span>
+                <h2 class="text-3xl md:text-5xl font-playfair font-bold text-white mb-4" data-i18n="menu.title">Tinh Hoa <span class="italic text-ocean-blue">Ẩm Thực</span></h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-transparent via-sand-gold to-transparent mx-auto"></div>
             </div>
             
@@ -161,9 +168,9 @@
 
                     <div class="absolute bottom-0 left-0 p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-20">
                         <div class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-3 shadow-lg">Must Try</div>
-                        <h3 class="text-2xl md:text-3xl font-playfair font-bold text-white mb-2">Bún Quậy Kiến Xây</h3>
-                        <p class="text-gray-300 line-clamp-2 mb-4 group-hover:text-white transition-colors text-sm md:text-base">Trải nghiệm tự pha nước chấm và thưởng thức hương vị tươi ngon của hải sản xay nhuyễn.</p>
-                        <span class="text-sand-gold font-bold uppercase text-sm tracking-wider group-hover:underline decoration-sand-gold underline-offset-4">Xem Chi Tiết <i class="fas fa-arrow-right ml-1"></i></span>
+                        <h3 class="text-2xl md:text-3xl font-playfair font-bold text-white mb-2" data-i18n="dish.bunquay">Bún Quậy Kiến Xây</h3>
+                        <p class="text-gray-300 line-clamp-2 mb-4 group-hover:text-white transition-colors text-sm md:text-base" data-i18n="dish.bunquay.desc">Trải nghiệm tự pha nước chấm và thưởng thức hương vị tươi ngon của hải sản xay nhuyễn.</p>
+                        <span class="text-sand-gold font-bold uppercase text-sm tracking-wider group-hover:underline decoration-sand-gold underline-offset-4"><span data-i18n="btn.details">Xem Chi Tiết</span> <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
 
@@ -177,8 +184,8 @@
                          </div>
                     </div>
                     <div class="absolute bottom-0 left-0 p-6 z-20">
-                        <h3 class="text-2xl font-playfair font-bold text-white mb-1">Gỏi Cá Trích</h3>
-                        <p class="text-gray-400 text-sm mb-3">Sự kết hợp hoàn hảo giữa cá tươi và dừa.</p>
+                        <h3 class="text-2xl font-playfair font-bold text-white mb-1" data-i18n="dish.goicatrich">Gỏi Cá Trích</h3>
+                        <p class="text-gray-400 text-sm mb-3" data-i18n="dish.goicatrich.desc">Sự kết hợp hoàn hảo giữa cá tươi và dừa.</p>
                         <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-sand-gold group-hover:text-ocean-charcoal transition-all">
                             <i class="fas fa-arrow-right"></i>
                         </span>
@@ -190,7 +197,7 @@
                     <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_LaIb8sS_kih0g6.webp" loading="lazy" alt="Bún Kèn" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">Bún Kèn</h3>
+                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform" data-i18n="dish.bunken">Bún Kèn</h3>
                         <span class="opacity-0 group-hover:opacity-100 transition-opacity text-sand-gold text-sm font-bold">Khám phá <i class="fas fa-chevron-right text-xs"></i></span>
                     </div>
                 </a>
@@ -200,7 +207,7 @@
                     <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_7Padno7_je7oz6.webp" loading="lazy" alt="Ghẹ Hàm Ninh" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">Ghẹ Hàm Ninh</h3>
+                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform" data-i18n="dish.ghe">Ghẹ Hàm Ninh</h3>
                         <span class="opacity-0 group-hover:opacity-100 transition-opacity text-sand-gold text-sm font-bold">Khám phá <i class="fas fa-chevron-right text-xs"></i></span>
                     </div>
                 </a>
@@ -210,7 +217,7 @@
                     <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228894/https_i.imgur.com_y5CgX2M_icb2rl.webp" loading="lazy" alt="Nhum Biển" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">Nhum Biển</h3>
+                        <h3 class="text-2xl font-playfair font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform" data-i18n="dish.nhum">Nhum Biển</h3>
                         <span class="opacity-0 group-hover:opacity-100 transition-opacity text-sand-gold text-sm font-bold">Khám phá <i class="fas fa-chevron-right text-xs"></i></span>
                     </div>
                 </a>
@@ -226,8 +233,8 @@
                     </div>
                     <div class="absolute bottom-0 left-0 p-6 flex items-end justify-between w-full z-20">
                         <div>
-                            <h3 class="text-2xl font-playfair font-bold text-white mb-1">Gà Rẫy Phú Quốc</h3>
-                            <p class="text-gray-300 text-sm">Thịt chắc, thơm ngon, hương vị núi rừng.</p>
+                            <h3 class="text-2xl font-playfair font-bold text-white mb-1" data-i18n="dish.garay">Gà Rẫy Phú Quốc</h3>
+                            <p class="text-gray-300 text-sm" data-i18n="dish.garay.desc">Thịt chắc, thơm ngon, hương vị núi rừng.</p>
                         </div>
                         <span class="w-10 h-10 rounded-full bg-white text-ocean-charcoal flex items-center justify-center shadow-lg transform group-hover:rotate-45 transition-transform">
                             <i class="fas fa-arrow-up text-lg"></i>
@@ -243,8 +250,8 @@
     <section id="map-section" class="relative py-16 md:py-20 bg-gray-100">
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-8 md:mb-12 fade-in-section">
-                <h2 class="text-3xl md:text-4xl font-playfair font-bold text-ocean-charcoal mb-4">Bản Đồ <span class="text-ocean-blue">Ẩm Thực</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Khám phá vị trí những quán ăn ngon nức tiếng tại Phú Quốc. Nhấn vào các biểu tượng để xem chi tiết.</p>
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold text-ocean-charcoal mb-4" data-i18n="map.title">Bản Đồ <span class="text-ocean-blue">Ẩm Thực</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base" data-i18n="map.desc">Khám phá vị trí những quán ăn ngon nức tiếng tại Phú Quốc. Nhấn vào các biểu tượng để xem chi tiết.</p>
             </div>
 
             <!-- Interactive Map Container -->
@@ -280,7 +287,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Món bún tươi làm tại chỗ, nước chấm tự pha, hương vị độc bản của Phú Quốc.</p>
                 <div class="flex gap-3">
-                    <a href="mon-an/bun-quay.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/bun-quay.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -301,7 +308,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Sự kết hợp tươi ngon của cá trích, dừa nạo và rau rừng.</p>
                 <div class="flex gap-3">
-                    <a href="mon-an/goi-ca-trich.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/goi-ca-trich.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -322,7 +329,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Vị béo ngậy của nước cốt dừa và cá xay nhuyễn đặc trưng.</p>
                 <div class="flex gap-3">
-                    <a href="mon-an/bun-ken.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/bun-ken.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -340,7 +347,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Ghẹ Hàm Ninh</h3>
                 <p class="text-gray-600 text-sm mb-6">Ghẹ chắc thịt, ngọt tự nhiên, nổi tiếng nhất đảo.</p>
                  <div class="flex gap-3">
-                    <a href="mon-an/ghe-ham-ninh.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/ghe-ham-ninh.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -356,7 +363,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Nhum Biển (Cầu Gai)</h3>
                 <p class="text-gray-600 text-sm mb-6">Đặc sản bổ dưỡng, thường ăn sống với mù tạt hoặc nướng mỡ hành.</p>
                  <div class="flex gap-3">
-                    <a href="mon-an/nhum-bien.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/nhum-bien.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                      <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -372,7 +379,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Gà Rẫy Phú Quốc</h3>
                 <p class="text-gray-600 text-sm mb-6">Thịt gà mềm ngọt, da giòn, chế biến món miến gà hoặc gà hấp.</p>
                  <div class="flex gap-3">
-                    <a href="mon-an/ga-ray.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/ga-ray.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors" data-i18n="btn.details">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -384,19 +391,29 @@
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <h3 class="text-2xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
-            <p class="text-gray-400 mb-8 max-w-lg mx-auto text-sm">Dự án quảng bá du lịch và ẩm thực đảo ngọc, lan tỏa hương vị truyền thống đến bạn bè năm châu.</p>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto text-sm" data-i18n="footer.desc">Dự án quảng bá du lịch và ẩm thực đảo ngọc, lan tỏa hương vị truyền thống đến bạn bè năm châu.</p>
+            
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm md:text-base font-medium">
+                <a href="#home" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.home">Trang Chủ</a>
+                <a href="#menu" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.menu">Thực Đơn</a>
+                <a href="#map-section" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.map">Bản Đồ</a>
+                <a href="about.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.about">Giới Thiệu</a>
+                <a href="contact.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.contact">Liên Hệ</a>
+            </div>
+
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-gray-400 hover:text-sand-gold transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
                 <a href="#" class="text-gray-400 hover:text-sand-gold transition-colors"><i class="fab fa-instagram text-xl"></i></a>
                 <a href="#" class="text-gray-400 hover:text-sand-gold transition-colors"><i class="fab fa-youtube text-xl"></i></a>
             </div>
-            <p class="text-gray-600 text-xs md:text-sm">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
+            <p class="text-gray-600 text-xs md:text-sm" data-i18n="footer.design">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
         </div>
     </footer>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    
+    <script src="i18n.js"></script>
     <script>
         // --- Mobile Menu Logic ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -537,7 +554,7 @@
                     icon: "fa-fish", color: "#24B4AB",
                     dish: "Gỏi Cá Trích",
                     // Updated Image Link
-                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp",
+                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228899/https_i.imgur.com_Nwisy71_rprian.webp",
                     modalId: "modal-goi-ca-trich"
                 },
                 {
@@ -546,7 +563,7 @@
                     icon: "fa-fish", color: "#24B4AB",
                     dish: "Gỏi Cá Trích",
                     // Updated Image Link
-                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp",
+                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228899/https_i.imgur.com_Nwisy71_rprian.webp",
                     modalId: "modal-goi-ca-trich"
                 },
                 {
@@ -555,7 +572,7 @@
                     icon: "fa-fish", color: "#24B4AB",
                     dish: "Gỏi Cá Trích",
                     // Updated Image Link
-                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp",
+                    img: "https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228899/https_i.imgur.com_Nwisy71_rprian.webp",
                     modalId: "modal-goi-ca-trich"
                 },
 

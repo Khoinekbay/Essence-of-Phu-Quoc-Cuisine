@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -34,8 +33,12 @@
     <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="../index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
-                <i class="fas fa-arrow-left mr-2"></i> Trở về
+                <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="nav.home">Trở về</span>
             </a>
+            <!-- Language Switcher -->
+            <button class="lang-btn text-white hover:text-sand-gold transition-colors font-medium text-sm border border-white/50 px-3 py-1 rounded-full hover:bg-white/10 backdrop-blur-sm">
+                VN | EN
+            </button>
         </div>
     </nav>
 
@@ -49,7 +52,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-forest-green/80 to-transparent"></div>
         </div>
         <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
-            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-2xl">Gà Rẫy Phú Quốc</h1>
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-2xl" data-i18n="dish.garay">Gà Rẫy Phú Quốc</h1>
             <p class="text-xl md:text-2xl font-light italic text-sand-gold">"Hương vị núi rừng giữa lòng biển đảo"</p>
         </div>
     </header>
@@ -137,10 +140,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-earth-brown text-white py-8 mt-12 text-center">
-        <p class="text-sm opacity-70">&copy; 2025-2026 10C1 THPT An Thới</p>
+    <footer class="bg-earth-brown text-white py-12 mt-12 text-center">
+        <div class="container mx-auto px-6">
+            <h3 class="text-xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm md:text-base font-medium">
+                <a href="../index.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.home">Trang Chủ</a>
+                <a href="../index.html#menu" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.menu">Thực Đơn</a>
+                <a href="../index.html#map-section" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.map">Bản Đồ</a>
+                <a href="../about.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.about">Giới Thiệu</a>
+                <a href="../contact.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.contact">Liên Hệ</a>
+            </div>
+            <p class="text-sm opacity-70" data-i18n="footer.design">&copy; 2025-2026 10C1 THPT An Thới</p>
+        </div>
     </footer>
-
+    
+    <script src="../i18n.js"></script>
     <script>
         // Animations
         const observer = new IntersectionObserver((entries) => {

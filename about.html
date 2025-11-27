@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -37,10 +36,14 @@
             <a href="index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md relative z-50">
                 Phú Quốc <span class="text-sand-gold">Cuisine</span>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Trang Chủ</a>
-                <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Thực Đơn</a>
-                <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold">Giới Thiệu</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.home">Trang Chủ</a>
+                <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.menu">Thực Đơn</a>
+                <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold" data-i18n="nav.about">Giới Thiệu</a>
+                <a href="contact.html" class="text-white hover:text-sand-gold transition-colors font-medium text-lg" data-i18n="nav.contact">Liên Hệ</a>
+                <button class="lang-btn text-white hover:text-sand-gold transition-colors font-medium text-sm border border-white/50 px-3 py-1 rounded-full hover:bg-white/10">
+                    VN | EN
+                </button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -51,9 +54,13 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="fixed inset-0 bg-ocean-charcoal/95 z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden backdrop-blur-xl">
-            <a href="index.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Trang Chủ</a>
-            <a href="index.html#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Thực Đơn</a>
-            <a href="#" class="mobile-link text-2xl font-playfair text-sand-gold border-b-2 border-sand-gold">Giới Thiệu</a>
+            <a href="index.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.home">Trang Chủ</a>
+            <a href="index.html#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.menu">Thực Đơn</a>
+            <a href="#" class="mobile-link text-2xl font-playfair text-sand-gold border-b-2 border-sand-gold" data-i18n="nav.about">Giới Thiệu</a>
+            <a href="contact.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold" data-i18n="nav.contact">Liên Hệ</a>
+            <button class="lang-btn mobile-link text-xl font-playfair text-white hover:text-sand-gold border border-white/50 px-6 py-2 rounded-full">
+                VN | EN
+            </button>
         </div>
     </nav>
 
@@ -177,13 +184,19 @@
     <footer class="bg-ocean-charcoal text-white py-12 relative text-center">
         <div class="container mx-auto px-6 relative z-10">
             <h3 class="text-2xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
-            <p class="text-gray-400 mb-8 max-w-lg mx-auto text-sm">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
-            <a href="index.html" class="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-ocean-charcoal transition-all font-bold">
-                Trở Về Trang Chủ
-            </a>
+            <p class="text-gray-400 mb-6 max-w-lg mx-auto text-sm" data-i18n="footer.desc">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
+             <!-- Added Footer Navigation -->
+             <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm md:text-base font-medium">
+                <a href="index.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.home">Trang Chủ</a>
+                <a href="index.html#menu" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.menu">Thực Đơn</a>
+                <a href="index.html#map-section" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.map">Bản Đồ</a>
+                <a href="about.html" class="text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.about">Giới Thiệu</a>
+                <a href="contact.html" class="text-gray-300 hover:text-sand-gold transition-colors uppercase tracking-wide block md:inline-block p-2" data-i18n="nav.contact">Liên Hệ</a>
+            </div>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script>
         // --- Mobile Menu Logic ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
