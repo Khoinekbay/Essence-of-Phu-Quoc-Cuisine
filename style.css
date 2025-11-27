@@ -1,55 +1,45 @@
 
-/* General styles & Animations */
+/* General Animations */
 @keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(-15%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+  0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
 }
+.animate-bounce-slow { animation: bounce-slow 2s infinite; }
 
-.animate-bounce-slow {
-    animation: bounce-slow 2s infinite;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+.animate-slide-down { animation: slideDown 0.8s ease-out forwards; }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
+.animate-scale-in { animation: scaleIn 1s ease-out forwards; }
 
 /* Modal Animations */
 @keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
+.animate-zoom-in { animation: zoomIn 0.3s ease-out forwards; }
 
-.animate-zoom-in {
-    animation: zoomIn 0.3s ease-out forwards;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
+.animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
 
-/* Custom Scrollbar Hide */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+/* Section Fade-in Helper */
+.fade-in-section { opacity: 0; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in-section.is-visible { opacity: 1; }
 
 /* Video Fallback Background */
 .video-fallback-bg {
@@ -57,99 +47,42 @@
     background-size: 400% 400%;
     animation: gradientWave 15s ease infinite;
 }
-
 @keyframes gradientWave {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-
 
 /* Card Flip Effect */
-.card-flip {
-    perspective: 1000px;
-}
+.card-flip { perspective: 1000px; }
 .card-flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    /* Custom cubic-bezier for a slight bounce effect */
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.8s; transform-style: preserve-3d;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.card-flip:hover .card-flip-inner {
-    transform: rotateY(180deg);
-}
+.card-flip:hover .card-flip-inner { transform: rotateY(180deg); }
 .card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+    position: absolute; width: 100%; height: 100%;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
 }
-.card-back {
-    transform: rotateY(180deg);
+.card-back { transform: rotateY(180deg); }
+
+/* Sticky Close Button in Modal */
+.sticky-close {
+    position: sticky;
+    top: 1rem;
+    float: right;
 }
 
-/* Accordion */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.peer:checked ~ .accordion-content {
-    max-height: 100px; /* Adjust as needed */
-}
-
-/* Custom Range Sliders */
+/* Custom Range Slider Styles */
 input[type=range] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
+    -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer; width: 100%;
 }
-
-input[type=range]:focus {
-    outline: none;
-}
-
-/* Track */
-input[type=range]::-webkit-slider-runnable-track {
-    height: 8px;
-    border-radius: 4px;
-    background: var(--track-bg, #e5e7eb);
-}
-input[type=range]::-moz-range-track {
-    height: 8px;
-    border-radius: 4px;
-    background: var(--track-bg, #e5e7eb);
-}
-
-/* Thumb */
+input[type=range]:focus { outline: none; }
+input[type=range]::-webkit-slider-runnable-track { height: 8px; border-radius: 4px; background: #e5e7eb; }
+input[type=range]::-moz-range-track { height: 8px; border-radius: 4px; background: #e5e7eb; }
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    margin-top: -6px; /* (track height - thumb height) / 2 */
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border: 2px solid var(--thumb-border, #9ca3af);
-    border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-input[type=range]::-moz-range-thumb {
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border: 2px solid var(--thumb-border, #9ca3af);
-    border-radius: 50%;
+    -webkit-appearance: none; appearance: none; margin-top: -6px; height: 20px; width: 20px;
+    background-color: #fff; border: 2px solid currentColor; border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
