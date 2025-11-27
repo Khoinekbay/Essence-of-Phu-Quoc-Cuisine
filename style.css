@@ -25,6 +25,26 @@
     transform: translateY(0);
 }
 
+/* Video Fallback Background */
+.video-fallback-bg {
+    background: linear-gradient(-45deg, #003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600);
+    background-size: 400% 400%;
+    animation: gradientWave 15s ease infinite;
+}
+
+@keyframes gradientWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 /* Card Flip Effect */
 .card-flip {
     perspective: 1000px;
@@ -123,5 +143,5 @@ input[type=range]::-moz-range-thumb {
     content: "/";
 }
 .breadcrumb-item.active {
-    color: #6c757d;
+    color: #6c7d;
 }
