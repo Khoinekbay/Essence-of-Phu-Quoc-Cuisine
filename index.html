@@ -21,7 +21,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -51,7 +51,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
 <script type="importmap">
 {
   "imports": {
@@ -63,6 +62,391 @@
 </script>
 </head>
 <body class="bg-sand-drift text-ocean-charcoal font-sans">
+
+    <!-- ==================== MODALS (HIDDEN BY DEFAULT) ==================== -->
+
+    <!-- 1. Bún Quậy Modal -->
+    <input type="checkbox" id="modal-bun-quay" class="peer/bunquay hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/bunquay:flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-6xl max-h-[95vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto">
+            <!-- Close Button -->
+            <label for="modal-bun-quay" class="absolute top-4 right-4 z-50 cursor-pointer bg-white/20 hover:bg-white/40 rounded-full p-2 text-white backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            
+            <!-- Modal Content -->
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <!-- Hero Image -->
+                <div class="relative h-[40vh] md:h-[50vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228894/https_i.imgur.com_U6hWqyt_dq4uto.webp" alt="Bún Quậy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div>
+                            <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-2">Bún Quậy Kiến Xây</h2>
+                            <p class="text-white/90 text-xl font-medium">"Chưa ăn Bún Quậy là coi như chưa đến Phú Quốc"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <!-- Main Content (Left Column) -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="prose prose-lg max-w-none text-ocean-charcoal/80">
+                            <p class="lead text-xl font-semibold text-ocean-charcoal mb-4">
+                                Bún quậy Phú Quốc mang hương vị độc đáo và lạ miệng, là đặc sản nhất định phải thử trong làng “đặc sản” Việt Nam.
+                            </p>
+                            <p class="mb-4">
+                                Bún quậy có ở đảo ngọc từ lâu và có tiếng, nhưng thực chất món ăn có nguồn gốc từ tỉnh Bình Định, biến tấu từ món bún tôm, do ngư dân ở Bình Định mang vào Phú Quốc. Cái tên "bún quậy" (stirring noodles) ra đời từ hành động thực khách phải tự tay "quậy" hỗn hợp nước chấm (tắc, đường, ớt, muối, bột ngọt) cho đến khi sánh lại và chuyển màu cam sữa.
+                            </p>
+                            
+                            <h3 class="text-2xl font-serif font-bold text-ocean-charcoal mt-8 mb-4"><i class="fa-solid fa-utensils mr-2 text-nuoc-mam"></i>Quy Trình Chế Biến Độc Đáo</h3>
+                            <p class="mb-4">
+                                Điểm đặc biệt nhất của món ăn này là sự tươi mới tuyệt đối (Freshness). Sợi bún được làm từ bột gạo ngâm mềm, xay nhuyễn, ép thành sợi và luộc ngay trong nồi nước sôi trước mặt thực khách.
+                            </p>
+                            
+                            <!-- Video Section -->
+                            <div class="my-8 rounded-xl overflow-hidden shadow-lg bg-black">
+                                <video controls class="w-full aspect-video">
+                                    <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764229662/CookyVN_-_C%C3%A1ch_l%C3%A0m_B%C3%BAn_Qu%E1%BA%ADy_Ph%C3%BA_Qu%E1%BB%91c_tr%E1%BB%A9_danh_nh%E1%BA%A5t_%C4%91%E1%BB%8Bnh_ph%E1%BA%A3i_th%E1%BB%AD-_Cooky_TV.publer.com_on0kem.mp4" type="video/mp4">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                                <p class="text-white/80 text-center p-2 text-sm italic">Quy trình làm bún quậy trứ danh</p>
+                            </div>
+
+                            <h3 class="text-2xl font-serif font-bold text-ocean-charcoal mt-8 mb-4">Cách Thưởng Thức Đúng Điệu</h3>
+                            <ul class="list-disc list-inside space-y-2 pl-4 marker:text-nuoc-mam">
+                                <li><strong>Pha nước chấm:</strong> Tự tay "quậy" hỗn hợp muối, đường, bột ngọt, ớt và tắc cho đến khi sánh lại và chuyển màu cam sữa.</li>
+                                <li><strong>Thưởng thức:</strong> Ăn ngay khi bún còn nóng hổi. Vị ngọt thanh khiết của nước luộc bún (nước cơm) hòa quyện với vị ngọt đậm đà của chả tôm, chả cá quết tươi.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228893/https_i.imgur.com_o0ErW0e_zxmsst.webp" class="aspect-square object-cover rounded-lg shadow-md hover:scale-105 transition-transform" alt="Bún Quậy 1">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764229468/9a11ddd7-711a-4bf3-ae1b-9b29f7135da4.png" class="aspect-square object-cover rounded-lg shadow-md hover:scale-105 transition-transform" alt="Bún Quậy 2">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764229504/277e0ec9-1b18-480e-9621-d5b384be97af.png" class="aspect-square object-cover rounded-lg shadow-md hover:scale-105 transition-transform" alt="Bún Quậy 3">
+                        </div>
+                    </div>
+
+                    <!-- Sidebar (Right Column) -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <!-- Quick Info -->
+                        <div class="bg-sand-drift p-6 rounded-xl border border-gray-200">
+                            <h4 class="font-serif text-xl font-bold text-ocean-charcoal mb-4">Thông Tin Nhanh</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-nuoc-mam shadow-sm">
+                                        <i class="fa-solid fa-tag"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500 uppercase font-bold">Giá tham khảo</p>
+                                        <p class="font-semibold text-ocean-charcoal">40.000đ - 85.000đ</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-nuoc-mam shadow-sm">
+                                        <i class="fa-solid fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500 uppercase font-bold">Giờ mở cửa</p>
+                                        <p class="font-semibold text-ocean-charcoal">07:00 - 23:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Addresses -->
+                        <div>
+                            <h4 class="font-serif text-xl font-bold text-ocean-charcoal mb-4 border-b pb-2 border-gray-200">Địa Chỉ Uy Tín</h4>
+                            <div class="space-y-4">
+                                <div class="group">
+                                    <h5 class="font-bold text-ocean-charcoal group-hover:text-nuoc-mam transition-colors">1. Bún quậy Kiến Xây</h5>
+                                    <p class="text-sm text-gray-600"><i class="fa-solid fa-location-dot mr-1"></i> 28 Bạch Đằng, Dương Đông</p>
+                                    <div class="flex text-xs text-yellow-500 mt-1">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h5 class="font-bold text-ocean-charcoal group-hover:text-nuoc-mam transition-colors">2. Bún quậy Thanh Hùng</h5>
+                                    <p class="text-sm text-gray-600"><i class="fa-solid fa-location-dot mr-1"></i> 77 Đường 30/4, Dương Đông</p>
+                                    <div class="flex text-xs text-yellow-500 mt-1">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h5 class="font-bold text-ocean-charcoal group-hover:text-nuoc-mam transition-colors">3. Bún quậy Bình Dung</h5>
+                                    <p class="text-sm text-gray-600"><i class="fa-solid fa-location-dot mr-1"></i> 10 Hùng Vương, Dương Đông</p>
+                                    <div class="flex text-xs text-yellow-500 mt-1">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Gỏi Cá Trích Modal -->
+    <input type="checkbox" id="modal-goi-ca-trich" class="peer/goica hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/goica:flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-6xl max-h-[95vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto">
+            <label for="modal-goi-ca-trich" class="absolute top-4 right-4 z-50 cursor-pointer bg-white/20 hover:bg-white/40 rounded-full p-2 text-white backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <div class="relative h-[40vh] md:h-[50vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp" alt="Gỏi Cá Trích" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div>
+                            <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-2">Gỏi Cá Trích</h2>
+                            <p class="text-white/90 text-xl font-medium">"Bản giao hưởng Rừng & Biển"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <div class="lg:col-span-2 space-y-6 text-ocean-charcoal/80 leading-relaxed">
+                        <p class="lead text-xl font-semibold text-ocean-charcoal">Vị ngọt thanh của thịt cá trích tươi sống, béo ngậy của dừa nạo, chát nhẹ của rau rừng, hòa quyện trong nước chấm tỏi ớt đậu phộng đậm đà.</p>
+                        <p>Đây là món ăn thể hiện triết lý cân bằng Âm - Dương trong ẩm thực Việt. Cá trích sống (tính hàn) được cân bằng bởi nước mắm nhĩ độ đạm cao, ớt hiểm, hành tím và đặc biệt là rượu Sim (tính nhiệt).</p>
+                        
+                        <!-- Video Section -->
+                        <div class="my-6 rounded-xl overflow-hidden shadow-lg bg-black">
+                            <video controls class="w-full aspect-video">
+                                <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764232650/CookyVN_-_C%C3%A1ch_l%C3%A0m_B%C3%BAn_Qu%E1%BA%ADy_Ph%C3%BA_Qu%E1%BB%91c_tr%E1%BB%A9_danh_nh%E1%BA%A5t_%C4%91%E1%BB%8Bnh_ph%E1%BA%A3i_th%E1%BB%AD-_Cooky_TV.publer.com_lyedeh.mp4" type="video/mp4">
+                                Trình duyệt của bạn không hỗ trợ video.
+                            </video>
+                            <p class="text-white/80 text-center p-2 text-sm italic">Quy trình chế biến Gỏi Cá Trích</p>
+                        </div>
+
+                        <div class="bg-amber-50 p-6 rounded-xl border-l-4 border-nuoc-mam">
+                            <h4 class="font-bold text-ocean-charcoal mb-2">Văn Hóa Thưởng Thức</h4>
+                            <p>Không ăn vã mà phải cuốn. Bánh tráng phơi sương của Phú Quốc có độ dẻo đặc biệt, cuốn cùng rau rừng (đọt bứa, trâm sắn, xà lách, rau thơm), thêm vài sợi dừa nạo béo ngậy. Món ăn này gắn liền với cuộc sống ngư dân bám biển, ăn để lấy sức sau những chuyến ra khơi đêm.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228884/https_i.imgur.com_HpJTKYL_ap2uq3.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Rau rừng">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_7JUYaMh_haihoq.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Nước chấm">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 space-y-8">
+                        <div class="bg-sand-drift p-6 rounded-xl border border-gray-200">
+                            <h4 class="font-serif text-xl font-bold text-ocean-charcoal mb-4">Chi Tiết</h4>
+                            <p class="mb-2"><strong class="text-ocean-charcoal">Giá:</strong> 150.000đ - 250.000đ / đĩa (2-4 người)</p>
+                            <p class="mb-2"><strong class="text-ocean-charcoal">Combo chuẩn:</strong> Ăn gỏi cá trích + Uống rượu Sim.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-xl font-bold text-ocean-charcoal mb-4 border-b pb-2 border-gray-200">Địa Chỉ Gợi Ý</h4>
+                            <ul class="space-y-4">
+                                <li><h5 class="font-bold">Nhà hàng Vườn Táo</h5><p class="text-sm text-gray-600">Cửa Lấp, Dương Tơ</p></li>
+                                <li><h5 class="font-bold">Quán Việt</h5><p class="text-sm text-gray-600">261 Nguyễn Trung Trực</p></li>
+                                <li><h5 class="font-bold">Nhà hàng Xin Chào</h5><p class="text-sm text-gray-600">66 Trần Hưng Đạo</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Bún Kèn Modal -->
+    <input type="checkbox" id="modal-bun-ken" class="peer/bunken hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/bunken:flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto">
+            <label for="modal-bun-ken" class="absolute top-4 right-4 z-50 cursor-pointer bg-white/20 hover:bg-white/40 rounded-full p-2 text-white backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <div class="relative h-[40vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_HDqFlFh_tg2x6p.webp" alt="Bún Kèn" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Bún Kèn (Kèng)</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-lg mb-6">Một món ăn ít người biết nhưng lại là tinh hoa của sự giao thoa văn hóa Việt - Khmer. "Kèn" (hoặc Khèn) vay mượn từ tiếng Khmer, ám chỉ các món nấu từ nước cốt dừa.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold mb-3 text-nuoc-mam">Đặc Trưng</h3>
+                            <p class="text-gray-700 mb-4">Nước lèo màu vàng nghệ bắt mắt, béo ngậy vị cốt dừa, thơm mùi ngũ vị hương và sả. Thịt cá (cá nhồng hoặc cá ngân) được xay nhuyễn thành dạng chà bông (ruốc), hòa tan vào nước dùng tạo độ sánh đặc trưng. Ăn kèm đu đủ bào sợi để trung hòa vị béo.</p>
+                            
+                            <!-- Video Section -->
+                            <div class="my-6 rounded-xl overflow-hidden shadow-lg bg-black">
+                                <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/_zD0DdsgNV4" title="Bún Kèn Phú Quốc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <p class="text-white/80 text-center p-2 text-sm italic">Khám phá hương vị Bún Kèn</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bg-amber-50 p-6 rounded-xl mb-6">
+                                <h3 class="font-serif text-xl font-bold mb-3">Thông Tin</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex justify-between"><span>Giá:</span> <span class="font-bold">25.000đ - 40.000đ</span></li>
+                                    <li class="flex justify-between"><span>Địa chỉ 1:</span> <span class="font-bold">Út Lượm (87 Đường 30/4)</span></li>
+                                    <li class="flex justify-between"><span>Địa chỉ 2:</span> <span class="font-bold">Dì Hồng (4 Nguyễn Trãi)</span></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Gallery -->
+                            <div class="grid grid-cols-3 gap-2">
+                                <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764232468/850026d9-8b4d-4159-a8a1-05d152255019.png" class="aspect-square object-cover rounded-lg shadow-sm hover:scale-105 transition-transform" alt="Bún Kèn 1">
+                                <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764232511/b3c38bcd-beb6-48a5-bae7-64fbed05bd58.png" class="aspect-square object-cover rounded-lg shadow-sm hover:scale-105 transition-transform" alt="Bún Kèn 2">
+                                <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764232544/567d1554-b6bb-4a18-9b55-012be7b3a09a.png" class="aspect-square object-cover rounded-lg shadow-sm hover:scale-105 transition-transform" alt="Bún Kèn 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Ghẹ Hàm Ninh Modal -->
+    <input type="checkbox" id="modal-ghe-ham-ninh" class="peer/ghe hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/ghe:flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto">
+            <label for="modal-ghe-ham-ninh" class="absolute top-4 right-4 z-50 cursor-pointer bg-white/20 hover:bg-white/40 rounded-full p-2 text-white backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <div class="relative h-[40vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228893/https_i.imgur.com_o62oSWi_zgpcfo.webp" alt="Ghẹ Hàm Ninh" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Ghẹ Hàm Ninh</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-lg mb-6 text-ocean-charcoal/80">"Nhỏ mà có võ". Ghẹ Hàm Ninh kích thước không to như ghẹ Cà Mau, nhưng thịt cực kỳ chắc, thơm và ngọt vị biển sâu. Gắn liền với làng chài cổ Hàm Ninh.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold mb-3 text-chili-red">Bí Quyết Chọn Ghẹ</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li><strong>Ghẹ gạch (Cái):</strong> Thích hợp cho người thích ăn gạch béo.</li>
+                                <li><strong>Ghẹ thịt (Đực):</strong> Thích hợp cho người thích ăn thịt ngọt, chắc.</li>
+                                <li><strong>Thời điểm:</strong> Ăn theo trăng. Đầu tháng hoặc cuối tháng âm lịch là thời điểm ghẹ chắc thịt nhất. Tránh ngày rằm trăng tròn (ghẹ ốp).</li>
+                            </ul>
+                            <!-- Gallery -->
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228888/https_i.imgur.com_iY9BWxA_n0nvwl.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Ghẹ Hàm Ninh 1">
+                                <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_7Padno7_je7oz6.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Ghẹ Hàm Ninh 2">
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <h3 class="font-serif text-xl font-bold mb-3">Địa Chỉ</h3>
+                            <ul class="space-y-3">
+                                <li><strong>Nhà bè Bé Ghẹ:</strong> Làng chài Hàm Ninh</li>
+                                <li><strong>Quán Biển Xanh:</strong> Tổ 8, Hàm Ninh</li>
+                                <li><strong>Giá tham khảo:</strong> 200k - 600k/kg (Tùy thời điểm)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Nhum Biển Modal -->
+    <input type="checkbox" id="modal-nhum-bien" class="peer/nhum hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/nhum:flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-gray-900 text-sand-drift w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto border border-gray-700">
+            <label for="modal-nhum-bien" class="absolute top-4 right-4 z-50 cursor-pointer bg-white/10 hover:bg-white/30 rounded-full p-2 text-white backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <div class="relative h-[40vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_m4EXPF3_u4k6gv.webp" alt="Nhum Biển" class="w-full h-full object-cover opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent flex items-end p-8">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-nuoc-mam drop-shadow-lg">Nhum Biển Nướng</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-lg mb-6 text-gray-300">"Nhân sâm của đại dương". Bên trong vẻ ngoài gai góc là phần gạch (trứng) vàng ươm, béo ngậy như bơ và bổ dưỡng.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                            <h4 class="font-bold text-nuoc-mam mb-2">Ăn Sống (Sashimi)</h4>
+                            <p class="text-sm text-gray-400">Cảm nhận độ tươi nguyên bản với mù tạt.</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors border border-nuoc-mam">
+                            <h4 class="font-bold text-nuoc-mam mb-2">Nướng Mỡ Hành</h4>
+                            <p class="text-sm text-gray-400">Phổ biến nhất. Thơm lừng mùi hành phi, đậu phộng.</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                            <h4 class="font-bold text-nuoc-mam mb-2">Nấu Cháo</h4>
+                            <p class="text-sm text-gray-400">Béo ngậy, ấm bụng, bồi bổ sức khỏe.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_K93AvQO_qdxzrg.webp" class="aspect-square object-cover rounded-lg shadow-md border border-gray-700" alt="Nhum Biển 1">
+                        <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764234250/ddccf690-0ff2-46c4-96ce-013dfee975c0.png" class="aspect-square object-cover rounded-lg shadow-md border border-gray-700" alt="Nhum Biển 2">
+                    </div>
+
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-4">
+                        <div class="text-2xl font-bold text-white">25.000đ - 40.000đ <span class="text-sm font-normal text-gray-400">/ con</span></div>
+                        <div class="text-right">
+                            <p class="font-bold">Quán Ốc 343</p>
+                            <p class="text-sm text-gray-400">343 Đường 30/4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Gà Rẫy Modal -->
+    <input type="checkbox" id="modal-ga-ray" class="peer/garay hidden">
+    <div class="fixed inset-0 z-[100] hidden peer-checked/garay:flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-[#F5F5DC] w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative animate-zoom-in my-auto" style="background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');">
+            <label for="modal-ga-ray" class="absolute top-4 right-4 z-50 cursor-pointer bg-black/10 hover:bg-black/20 rounded-full p-2 text-ocean-charcoal backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-2xl w-8 h-8 flex items-center justify-center"></i>
+            </label>
+            <div class="overflow-y-auto flex-1 scrollbar-hide">
+                <div class="relative h-[40vh]">
+                    <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_cxZPUc9_ucl0cu.webp" alt="Gà Rẫy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#F5F5DC] via-transparent to-transparent flex items-end p-8">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-ocean-charcoal">Gà Rẫy Vườn Tiêu</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-lg mb-6 italic font-serif text-ocean-charcoal/90">"Không phải gà công nghiệp, cũng không hẳn gà rừng. Gà rẫy là gà nhà được nuôi thả tự do trong các vườn tiêu, rẫy điều, ngủ trên cây."</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <h3 class="font-bold text-xl mb-4 text-[#8D6E63]">Đặc Điểm Hương Vị</h3>
+                            <p class="text-gray-700 mb-4">Do vận động nhiều và tự kiếm ăn, thịt gà rẫy săn chắc, da giòn, ít mỡ nhưng luộc lên lại rất mềm và ngọt, thơm mùi thảo mộc.</p>
+                            <p class="font-bold text-ocean-charcoal">Món ngon:</p>
+                            <p class="text-gray-700">Miến gà rẫy hoặc Gà hấp tiêu xanh - sự kết hợp hoàn hảo giữa hai đặc sản gà và hồ tiêu Phú Quốc.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-4 text-[#8D6E63]">Địa Chỉ & Giá</h3>
+                            <div class="space-y-2">
+                                <div class="border-b border-[#8D6E63]/30 pb-2">
+                                    <div class="flex justify-between font-bold"><span>Quán Phở Thọ</span> <span>300k - 450k/con</span></div>
+                                    <div class="text-sm text-gray-600">77 Đường 30/4 - Chuyên gà rẫy</div>
+                                </div>
+                                <div class="border-b border-[#8D6E63]/30 pb-2">
+                                    <div class="flex justify-between font-bold"><span>Tiệm Gà Khói</span> <span>Theo thời giá</span></div>
+                                    <div class="text-sm text-gray-600">7 Nguyễn Thái Bình</div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between font-bold"><span>Quán 7 Tẩu</span> <span>Liên hệ trước</span></div>
+                                    <div class="text-sm text-chili-red italic">Đường 30/4 - Vui lòng gọi đặt bàn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Section -->
+                    <div class="mt-8">
+                        <h3 class="font-serif text-xl font-bold text-[#8D6E63] mb-4 border-b border-[#8D6E63]/30 pb-2">Hình Ảnh Thực Tế</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_kU5udi4_fytlia.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Gà Rẫy 1">
+                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228881/https_i.imgur.com_0fLQOlq_pqmraw.webp" class="aspect-square object-cover rounded-lg shadow-md" alt="Gà Rẫy 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50">
@@ -98,7 +482,7 @@
         <!-- Hero Section -->
         <section id="cau-chuyen" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
             <!-- Parallax Background Wrapper -->
-            <div class="video-fallback-bg absolute w-full h-[130%] -top-[15%] z-0 parallax-bg will-change-transform" data-speed="0.3">
+            <div class="video-fallback-bg absolute w-full h-[130%] -top-[15%] z-0 parallax-bg will-change-transform" data-speed="0.2">
                 <video poster="https://placehold.co/1920x1080/13080C/F9F9F9?text=Phu+Quoc+Seascape" class="w-full h-full object-cover" autoplay muted loop playsinline>
                     <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764228794/17488987-uhd_2560_1440_30fps_ttephl.mp4" type="video/mp4">
                 </video>
@@ -123,92 +507,95 @@
             </div>
         </section>
 
-        <!-- Dishes Section -->
-        <section id="thuc-don" class="relative py-20 sm:py-28 bg-sand-drift overflow-hidden">
-            <!-- Decorative Elements -->
-            <img src="https://storage.googleapis.com/aistudio-hosting/media/6594269d501481b22e153b66/banana-leaf-tl.png" alt="Decorative banana leaf" class="absolute top-0 left-0 -translate-x-1/3 w-[30rem] opacity-20 hidden md:block pointer-events-none" aria-hidden="true">
-            <img src="https://storage.googleapis.com/aistudio-hosting/media/6594269d501481b22e153b66/banana-leaf-br.png" alt="Decorative banana leaf" class="absolute bottom-0 right-0 translate-x-1/3 w-[30rem] opacity-20 hidden md:block pointer-events-none" aria-hidden="true">
+        <!-- Dishes Section (With Background Video) -->
+        <section id="thuc-don" class="relative py-20 sm:py-28 overflow-hidden">
+            
+            <!-- Second Background Video -->
+            <div class="absolute inset-0 w-full h-full -z-20 overflow-hidden bg-teal-900">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764232975/7318815-hd_1080_1920_30fps_islz9d.mp4" type="video/mp4">
+                </video>
+                <!-- Overlay REMOVED to show video clearly, fallback bg added above -->
+            </div>
+
+            <!-- Decorative Elements (Banana Leafs) - Kept but subtle -->
+            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764231000/banana-leaf-png-transparent.png" alt="" class="absolute top-0 left-0 w-64 md:w-96 opacity-30 -translate-x-10 -translate-y-10 rotate-45 pointer-events-none z-[-10]">
+            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764231000/banana-leaf-png-transparent.png" alt="" class="absolute bottom-0 right-0 w-64 md:w-96 opacity-30 translate-x-10 translate-y-10 -rotate-135 pointer-events-none z-[-10]">
 
             <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="text-center mb-16 fade-in-section">
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-ocean-charcoal">6 Trụ Cột Ẩm Thực</h2>
-                    <p class="mt-4 text-lg text-ocean-charcoal/70 max-w-2xl mx-auto leading-relaxed">
-                        Những món ăn không chỉ để no lòng, mà còn kể lại câu chuyện văn hóa của Đảo Ngọc.
-                    </p>
+                    <div class="inline-block bg-white/60 backdrop-blur-md rounded-xl px-8 py-4 shadow-lg border border-white/30">
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-ocean-charcoal">6 Trụ Cột Ẩm Thực</h2>
+                        <p class="mt-2 text-lg text-ocean-charcoal font-medium max-w-2xl mx-auto leading-relaxed">
+                            Những món ăn không chỉ để no lòng, mà còn kể lại câu chuyện văn hóa của Đảo Ngọc.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="space-y-20">
                     <!-- 1. Bún Quậy -->
                     <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div class="md:order-2">
-                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_8PloLCu_vthl9n.webp" alt="Bún Quậy Phú Quốc" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_8PloLCu_vthl9n.webp" alt="Bún Quậy Phú Quốc" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-white/50">
                         </div>
-                        <div class="md:order-1">
+                        <div class="md:order-1 bg-white/60 backdrop-blur-md p-8 rounded-2xl border border-white/40 shadow-lg">
                             <h3 class="font-serif text-3xl font-bold text-ocean-charcoal">1. Bún Quậy</h3>
                             <p class="font-semibold text-nuoc-mam mt-1 mb-4">"Chưa ăn Bún Quậy, coi như chưa đến Phú Quốc"</p>
-                            <p class="text-ocean-charcoal/80 leading-relaxed mb-6">Một nghi thức ẩm thực độc đáo, nơi thực khách tự tay pha chế chén nước chấm thần thánh, quyết định hương vị cho riêng mình.</p>
+                            <p class="text-ocean-charcoal/90 leading-relaxed mb-6 font-medium">Một nghi thức ẩm thực độc đáo, nơi thực khách tự tay pha chế chén nước chấm thần thánh, quyết định hương vị cho riêng mình.</p>
                             
-                            <!-- Sliders -->
+                            <!-- Sliders (Visual Only) -->
                              <div class="space-y-4 mb-6">
                                 <div class="relative">
-                                    <label for="chili-slider" class="flex justify-between items-center text-sm font-medium mb-1"><span>Vị cay</span><span>🌶️</span></label>
+                                    <label class="flex justify-between items-center text-sm font-bold text-ocean-charcoal mb-1"><span>Vị cay</span><span>🌶️</span></label>
                                     <div class="relative flex items-center">
-                                        <div class="text-lg opacity-50">🌶️</div>
-                                        <input id="chili-slider" type="range" class="w-full mx-2" style="--track-bg: #FEE2E2; --thumb-border: #F34455; background-image: linear-gradient(to right, #F34455 var(--value, 0%), #FEE2E2 var(--value, 0%));" oninput="this.style.setProperty('--value', this.value+'%')">
-                                        <div class="text-2xl">🌶️</div>
+                                        <input type="range" class="w-full mx-2 pointer-events-none" value="80" style="--track-bg: #FEE2E2; --thumb-border: #F34455; background-image: linear-gradient(to right, #F34455 80%, #FEE2E2 80%);">
                                     </div>
                                 </div>
                                 <div class="relative">
-                                    <label for="sugar-slider" class="flex justify-between items-center text-sm font-medium mb-1"><span>Vị ngọt</span><span>🍬</span></label>
+                                    <label class="flex justify-between items-center text-sm font-bold text-ocean-charcoal mb-1"><span>Vị ngọt</span><span>🍬</span></label>
                                     <div class="relative flex items-center">
-                                         <div class="text-lg opacity-50">🍬</div>
-                                        <input id="sugar-slider" type="range" class="w-full mx-2" style="--track-bg: #FEF3C7; --thumb-border: #EFA515; background-image: linear-gradient(to right, #EFA515 var(--value, 0%), #FEF3C7 var(--value, 0%));" oninput="this.style.setProperty('--value', this.value+'%')">
-                                        <div class="text-2xl">🍬</div>
-                                    </div>
-                                </div>
-                                <div class="relative">
-                                    <label for="calamansi-slider" class="flex justify-between items-center text-sm font-medium mb-1"><span>Vị chua</span><span>🍋</span></label>
-                                    <div class="relative flex items-center">
-                                        <div class="text-lg opacity-50">🍋</div>
-                                        <input id="calamansi-slider" type="range" class="w-full mx-2" style="--track-bg: #D1FAE5; --thumb-border: #10B981; background-image: linear-gradient(to right, #10B981 var(--value, 0%), #D1FAE5 var(--value, 0%));" oninput="this.style.setProperty('--value', this.value+'%')">
-                                        <div class="text-2xl">🍋</div>
+                                        <input type="range" class="w-full mx-2 pointer-events-none" value="60" style="--track-bg: #FEF3C7; --thumb-border: #EFA515; background-image: linear-gradient(to right, #EFA515 60%, #FEF3C7 60%);">
                                     </div>
                                 </div>
                             </div>
                             
-                            <a href="mon-an/bun-quay.html" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
-
+                            <!-- Trigger Modal -->
+                            <label for="modal-bun-quay" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                         </div>
                     </div>
 
                     <!-- 2. Gỏi Cá Trích -->
                     <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div>
+                        <div class="bg-white/60 backdrop-blur-md p-8 rounded-2xl border border-white/40 shadow-lg">
                             <h3 class="font-serif text-3xl font-bold text-ocean-charcoal">2. Gỏi Cá Trích</h3>
                             <p class="font-semibold text-nuoc-mam mt-1 mb-4">Sự hài hòa của Rừng và Biển</p>
-                            <p class="text-ocean-charcoal/80 leading-relaxed mb-4">Vị tươi hàn của cá sống được cân bằng hoàn hảo bởi vị nồng nhiệt của rượu sim, rau rừng và vị béo của dừa. Một triết lý ẩm thực gói trọn trong một cuốn bánh tráng.</p>
+                            <p class="text-ocean-charcoal/90 leading-relaxed mb-4 font-medium">Vị tươi hàn của cá sống được cân bằng hoàn hảo bởi vị nồng nhiệt của rượu sim, rau rừng và vị béo của dừa. Một triết lý ẩm thực gói trọn trong một cuốn bánh tráng.</p>
                              <div class="flex flex-wrap gap-2 mb-6">
                                 <span class="bg-ocean-charcoal text-sand-drift text-xs font-semibold px-3 py-1.5 rounded-full">Cá Trích Tươi</span>
                                 <span class="bg-ocean-charcoal text-sand-drift text-xs font-semibold px-3 py-1.5 rounded-full">Dừa Nạo</span>
                                 <span class="bg-ocean-charcoal text-sand-drift text-xs font-semibold px-3 py-1.5 rounded-full">Rau Rừng</span>
                             </div>
-                            <a href="mon-an/goi-ca-trich.html" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
+                            <!-- Trigger Modal -->
+                            <label for="modal-goi-ca-trich" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                         </div>
                         <div class="min-h-[400px] card-flip relative">
                             <div class="w-full h-full card-flip-inner">
-                                <!-- Front Face with Parallax -->
-                                <div class="card-face w-full h-full rounded-2xl shadow-lg flex items-center justify-center p-8 text-white overflow-hidden relative">
-                                    <!-- Parallax Background Image -->
-                                    <div class="absolute w-full h-[130%] -top-[15%] left-0 bg-cover bg-center parallax-bg will-change-transform" data-speed="0.15" style="background-image: url('https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp')"></div>
-                                    
-                                    <div class="absolute inset-0 bg-black/40 rounded-2xl z-10"></div>
+                                <!-- Front Face -->
+                                <div class="card-face w-full h-full rounded-2xl shadow-xl border border-white/50 flex items-center justify-center p-8 text-white overflow-hidden relative">
+                                    <!-- Video Background -->
+                                    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                                        <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764232975/7318815-hd_1080_1920_30fps_islz9d.mp4" type="video/mp4">
+                                    </video>
+                                    <!-- Overlay -->
+                                    <div class="absolute inset-0 bg-black/40 z-10"></div>
+                                    <!-- Content -->
                                     <div class="relative z-20 text-center">
                                         <i class="fa-solid fa-hand-pointer text-4xl mb-4"></i>
                                         <p class="font-semibold">Lật để xem cách ăn</p>
                                     </div>
                                 </div>
                                 <!-- Back Face -->
-                                <div class="card-face card-back w-full h-full bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center text-center">
+                                <div class="card-face card-back w-full h-full bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-8 flex flex-col justify-center text-center border border-white/50">
                                     <h4 class="font-serif text-xl font-bold mb-2">Cách Thưởng Thức</h4>
                                     <p class="text-ocean-charcoal/80 leading-relaxed">Trải bánh tráng, đặt rau rừng, gỏi cá, dừa nạo lên trên, cuốn chặt tay và chấm cùng nước mắm Phú Quốc hảo hạng.</p>
                                 </div>
@@ -219,96 +606,74 @@
                     <!-- 3. Bún Kèn -->
                      <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div class="md:order-2">
-                            <img src="https://placehold.co/800x600/F4D03F/13080C?text=Bún+Kèn" alt="Bún Kèn" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg">
+                            <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228883/https_i.imgur.com_HDqFlFh_tg2x6p.webp" alt="Bún Kèn" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-white/50">
                         </div>
-                        <div class="md:order-1 bg-gradient-to-br from-amber-100 to-yellow-200 rounded-2xl p-8 md:p-12">
+                        <div class="md:order-1 bg-white/60 backdrop-blur-md p-8 rounded-2xl border-l-8 border-yellow-400 shadow-lg">
                             <h3 class="font-serif text-3xl font-bold text-ocean-charcoal">3. Bún Kèn</h3>
                             <p class="font-semibold text-ocean-charcoal/70 mt-1 mb-4">Di sản Khmer trong lòng Đảo Ngọc</p>
-                            <p class="text-ocean-charcoal/80 leading-relaxed mb-4">"Kèn" trong tiếng Khmer chỉ những món ăn có nước cốt dừa. Vị béo ngậy của dừa và màu vàng ươm của nghệ tạo nên một tô bún dân dã mà khó quên.</p>
+                            <p class="text-ocean-charcoal/90 leading-relaxed mb-4 font-medium">"Kèn" trong tiếng Khmer chỉ những món ăn có nước cốt dừa. Vị béo ngậy của dừa và màu vàng ươm của nghệ tạo nên một tô bún dân dã mà khó quên.</p>
                             <div class="flex justify-between items-center">
                                 <p class="font-sans font-bold text-2xl text-chili-red">25.000đ - 40.000đ</p>
-                                <a href="mon-an/bun-ken.html" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
+                                <!-- Trigger Modal -->
+                                <label for="modal-bun-ken" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- 4. Ghẹ Hàm Ninh -->
                     <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                         <div>
+                         <div class="bg-white/60 backdrop-blur-md p-8 rounded-2xl border border-white/40 shadow-lg">
                             <h3 class="font-serif text-3xl font-bold text-ocean-charcoal">4. Ghẹ Hàm Ninh</h3>
                             <p class="font-semibold text-nuoc-mam mt-1 mb-4">Món quà từ làng chài cổ</p>
-                            <p class="text-ocean-charcoal/80 leading-relaxed mb-4">Ngon nhất khi chỉ cần luộc để cảm nhận trọn vẹn vị thịt chắc, ngọt và tươi roi rói. Chấm cùng muối tiêu chanh là đủ để chinh phục mọi thực khách.</p>
-                            <a href="mon-an/ghe-ham-ninh.html" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
+                            <p class="text-ocean-charcoal/90 leading-relaxed mb-4 font-medium">Ngon nhất khi chỉ cần luộc để cảm nhận trọn vẹn vị thịt chắc, ngọt và tươi roi rói. Chấm cùng muối tiêu chanh là đủ để chinh phục mọi thực khách.</p>
+                            <!-- Trigger Modal -->
+                            <label for="modal-ghe-ham-ninh" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                         </div>
                         <div>
-                             <img src="https://placehold.co/800x600/C0392B/F9F9F9?text=Ghẹ+Hàm+Ninh" alt="Ghẹ Hàm Ninh" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg">
+                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764233985/a4c1aa79-07f0-49af-a8e5-d45daffd8d70.png" alt="Ghẹ Hàm Ninh" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-white/50">
                         </div>
                     </div>
                     
                     <!-- 5. Nhum Biển -->
                     <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div class="md:order-2">
-                             <img src="https://placehold.co/800x600/F1C40F/13080C?text=Nhum+Biển" alt="Nhum Biển" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg">
+                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764234250/ddccf690-0ff2-46c4-96ce-013dfee975c0.png" alt="Nhum Biển" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-white/50">
                         </div>
-                        <div class="md:order-1 text-sand-drift rounded-2xl p-8 md:p-12 h-full flex flex-col justify-center shadow-lg" style="background: linear-gradient(rgba(19, 8, 12, 0.85), rgba(19, 8, 12, 0.85)), url('https://placehold.co/800x600/13080C/F9F9F9?text=Than+Hồng') center/cover;">
+                        <div class="md:order-1 bg-black/70 backdrop-blur-md text-sand-drift rounded-2xl p-8 md:p-12 h-full flex flex-col justify-center shadow-lg border border-gray-600">
                             <h3 class="font-serif text-3xl font-bold text-sand-drift">5. Nhum Biển</h3>
                             <p class="font-semibold text-nuoc-mam mt-1 mb-4">"Nhân sâm của đại dương"</p>
-                            <p class="text-sand-drift/80 leading-relaxed mb-6">Béo ngậy, thơm lừng khi nướng mỡ hành trên than hồng. Một món ăn bổ dưỡng, đậm vị biển cả mà bạn không thể bỏ lỡ.</p>
-                            <a href="mon-an/nhum-bien.html" class="inline-block bg-nuoc-mam text-ocean-charcoal font-semibold py-3 px-6 rounded-lg hover:bg-amber-500 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
+                            <p class="text-sand-drift/90 leading-relaxed mb-6 font-medium">Béo ngậy, thơm lừng khi nướng mỡ hành trên than hồng. Một món ăn bổ dưỡng, đậm vị biển cả mà bạn không thể bỏ lỡ.</p>
+                            <!-- Trigger Modal -->
+                            <label for="modal-nhum-bien" class="inline-block bg-nuoc-mam text-ocean-charcoal font-semibold py-3 px-6 rounded-lg hover:bg-amber-500 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                         </div>
                     </div>
                     
                     <!-- 6. Gà Rẫy -->
                     <div class="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div>
-                             <img src="https://placehold.co/800x600/8D6E63/F9F9F9?text=Gà+Rẫy" alt="Gà Rẫy" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg">
+                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_kU5udi4_fytlia.webp" alt="Gà Rẫy" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-white/50">
                         </div>
-                        <div>
+                        <div class="bg-white/60 backdrop-blur-md p-8 rounded-2xl border border-white/40 shadow-lg">
                             <h3 class="font-serif text-3xl font-bold text-ocean-charcoal mb-2">6. Gà Rẫy</h3>
                             <p class="font-semibold text-nuoc-mam mt-1 mb-4">Hương vị vườn tiêu</p>
-                            <p class="text-ocean-charcoal/80 leading-relaxed mb-6">Thịt gà thả vườn săn chắc, da giòn, được chế biến thành nhiều món ngon, đặc biệt là khi ăn cùng muối tiêu Phú Quốc trứ danh.</p>
-                            <div class="space-y-2 mb-6">
-                                <!-- Accordion Item 1 -->
-                                <div>
-                                    <input type="checkbox" id="ga-1" class="peer hidden">
-                                    <label for="ga-1" class="flex justify-between items-center bg-white p-4 rounded-lg cursor-pointer font-semibold shadow-sm hover:shadow-md transition-shadow">Phở Thọ <i class="fa-solid fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i></label>
-                                    <div class="accordion-content">
-                                       <p class="p-4 bg-white/50 text-ocean-charcoal/80 rounded-b-lg">Địa chỉ uy tín lâu năm cho món gà rẫy chất lượng.</p>
-                                    </div>
-                                </div>
-                                <!-- Accordion Item 2 -->
-                                <div>
-                                    <input type="checkbox" id="ga-2" class="peer hidden">
-                                    <label for="ga-2" class="flex justify-between items-center bg-white p-4 rounded-lg cursor-pointer font-semibold shadow-sm hover:shadow-md transition-shadow">Tiệm Gà Khói <i class="fa-solid fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i></label>
-                                     <div class="accordion-content">
-                                        <p class="p-4 bg-white/50 text-ocean-charcoal/80 rounded-b-lg">Một biến tấu hiện đại, độc đáo với gà được hun khói thơm lừng.</p>
-                                    </div>
-                                </div>
-                                 <!-- Accordion Item 3 -->
-                                <div>
-                                    <input type="checkbox" id="ga-3" class="peer hidden">
-                                    <label for="ga-3" class="flex justify-between items-center bg-white p-4 rounded-lg cursor-pointer font-semibold shadow-sm hover:shadow-md transition-shadow">Quán 7 Tẩu <i class="fa-solid fa-chevron-down transition-transform duration-300 peer-checked:rotate-180"></i></label>
-                                     <div class="accordion-content">
-                                        <p class="p-4 bg-white/50 text-ocean-charcoal/80 rounded-b-lg">Nổi tiếng với gà hấp tiêu xanh. <strong class="text-chili-red">Lưu ý:</strong> Nên liên hệ trước để đặt bàn và món.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="mon-an/ga-ray.html" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105">Tìm hiểu thêm</a>
+                            <p class="text-ocean-charcoal/90 leading-relaxed mb-6 font-medium">Thịt gà thả vườn săn chắc, da giòn, được chế biến thành nhiều món ngon, đặc biệt là khi ăn cùng muối tiêu Phú Quốc trứ danh.</p>
+                            <!-- Trigger Modal -->
+                            <label for="modal-ga-ray" class="inline-block bg-ocean-charcoal text-sand-drift font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors shadow-md transform hover:scale-105 cursor-pointer">Tìm hiểu thêm</label>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Map Section (Placeholder) -->
-        <section id="ban-do" class="py-20 sm:py-28 bg-white">
+        <!-- Map Section (Updated Background) -->
+        <section id="ban-do" class="py-20 sm:py-28 bg-gradient-to-b from-[#B2EBF2] to-[#FFF9C4] backdrop-blur-sm">
             <div class="container mx-auto px-4 sm:px-6 text-center">
                 <h2 class="font-serif text-4xl md:text-5xl font-bold text-ocean-charcoal">Bản Đồ Ẩm Thực</h2>
                 <p class="mt-4 text-lg text-ocean-charcoal/70 max-w-2xl mx-auto leading-relaxed mb-8">
                     Khám phá vị trí của những quán ăn ngon nhất trên hòn đảo xinh đẹp này.
                 </p>
-                <div class="aspect-video bg-gray-200 rounded-2xl shadow-lg flex items-center justify-center">
-                    <p class="text-ocean-charcoal/50">Tích hợp bản đồ ở đây</p>
+                <div class="aspect-video bg-gray-200 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden border border-gray-300">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62865.98242583929!2d103.9567895!3d10.2128843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1645678901234!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -360,38 +725,8 @@
                 parallaxElements.forEach(el => {
                     const speed = parseFloat(el.dataset.speed) || 0.5;
                     const rect = el.parentElement.getBoundingClientRect();
-                    // Only animate if parent is broadly in view
                     if (rect.bottom > 0 && rect.top < window.innerHeight) {
-                        // Calculate position based on center of viewport
-                        // Center of element relative to center of viewport
                         const distanceFromCenter = rect.top + rect.height / 2 - window.innerHeight / 2;
-                        // When element is below center, distance is positive. We want background to shift UP (negative translateY) to create depth effect (bg moves slower than fg).
-                        // Actually, to make background move slower than foreground (which moves UP), background needs to translate DOWN (positive) relative to container?
-                        // Let's visualize: Container moves up 10px. We want bg to move up 5px.
-                        // So bg needs to move down 5px relative to container.
-                        // So when scrolling down (content moves up), translateY should be positive.
-                        // Scrolling down -> rect.top decreases (becomes negative).
-                        // So we need an inverse relationship or just factor rect.top.
-                        // Let's stick to a simple rect.top factor.
-                        // If rect.top is positive (lower on screen), yPos should be positive (shifted down).
-                        // If rect.top is negative (higher on screen), yPos should be negative (shifted up).
-                        // This means as it moves up, it shifts up -> moves FASTER?
-                        // No. If container moves up 10px, and we shift bg up 5px, total movement is 15px. Faster.
-                        // We want SLOWER.
-                        // Container moves up 10px. We want bg to move up 5px.
-                        // We need to shift bg DOWN 5px relative to container.
-                        // So as rect.top DECREASES (moves up), translateY should INCREASE (move down).
-                        // So yPos should be inversely related to rect.top? 
-                        // Or just: yPos = (window.innerHeight - rect.top) * speed ?
-                        // Let's try: yPos = (center - distanceFromCenter) * speed.
-                        // Let's just use: yPos = distanceFromCenter * speed * -1.
-                        // If below center (distance > 0), yPos is negative (shift up). 
-                        // If above center (distance < 0), yPos is positive (shift down).
-                        // Container moves UP. distance goes from + to -. yPos goes from - to +.
-                        // yPos increases (moves down).
-                        // Container moves up. BG moves down relative. Net result: BG moves up slower.
-                        // Correct.
-                        
                         const yPos = distanceFromCenter * speed * -1;
                         el.style.transform = `translateY(${yPos}px)`;
                     }

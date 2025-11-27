@@ -1,3 +1,4 @@
+
 /* General styles & Animations */
 @keyframes bounce-slow {
   0%, 100% {
@@ -23,6 +24,31 @@
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Modal Animations */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-zoom-in {
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
+/* Custom Scrollbar Hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Video Fallback Background */
@@ -126,22 +152,4 @@ input[type=range]::-moz-range-thumb {
     border: 2px solid var(--thumb-border, #9ca3af);
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Breadcrumb styles for detail pages */
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 0;
-    margin-bottom: 1rem;
-    list-style: none;
-}
-.breadcrumb-item + .breadcrumb-item::before {
-    float: left;
-    padding-right: .5rem;
-    color: #6c757d;
-    content: "/";
-}
-.breadcrumb-item.active {
-    color: #6c7d;
 }
