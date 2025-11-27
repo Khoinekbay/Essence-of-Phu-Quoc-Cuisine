@@ -97,12 +97,14 @@
     <main>
         <!-- Hero Section -->
         <section id="cau-chuyen" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
-            <div class="absolute inset-0 z-0 video-fallback-bg">
+            <!-- Parallax Background Wrapper -->
+            <div class="video-fallback-bg absolute w-full h-[130%] -top-[15%] z-0 parallax-bg will-change-transform" data-speed="0.3">
                 <video poster="https://placehold.co/1920x1080/13080C/F9F9F9?text=Phu+Quoc+Seascape" class="w-full h-full object-cover" autoplay muted loop playsinline>
                     <source src="https://res.cloudinary.com/dlbrm4bzk/video/upload/v1764228794/17488987-uhd_2560_1440_30fps_ttephl.mp4" type="video/mp4">
                 </video>
                 <div class="absolute inset-0 bg-gradient-to-t from-ocean-charcoal/70 to-ocean-charcoal/30"></div>
             </div>
+            
             <div class="relative z-10 p-4">
                 <h1 class="font-serif text-5xl md:text-7xl font-black tracking-wide">Tinh Hoa Ẩm Thực Phú Quốc</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-sand-drift/90 leading-relaxed">
@@ -112,7 +114,7 @@
                     Khám Phá Thực Đơn
                 </a>
             </div>
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
                 <a href="#thuc-don" aria-label="Scroll down">
                    <div class="w-8 h-14 border-2 border-white rounded-full flex justify-center items-start p-1 animate-bounce-slow">
                        <div class="w-1 h-3 bg-white rounded-full"></div>
@@ -122,8 +124,12 @@
         </section>
 
         <!-- Dishes Section -->
-        <section id="thuc-don" class="py-20 sm:py-28 bg-sand-drift overflow-hidden">
-            <div class="container mx-auto px-4 sm:px-6">
+        <section id="thuc-don" class="relative py-20 sm:py-28 bg-sand-drift overflow-hidden">
+            <!-- Decorative Elements -->
+            <img src="https://storage.googleapis.com/aistudio-hosting/media/6594269d501481b22e153b66/banana-leaf-tl.png" alt="Decorative banana leaf" class="absolute top-0 left-0 -translate-x-1/3 w-[30rem] opacity-20 hidden md:block pointer-events-none" aria-hidden="true">
+            <img src="https://storage.googleapis.com/aistudio-hosting/media/6594269d501481b22e153b66/banana-leaf-br.png" alt="Decorative banana leaf" class="absolute bottom-0 right-0 translate-x-1/3 w-[30rem] opacity-20 hidden md:block pointer-events-none" aria-hidden="true">
+
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="text-center mb-16 fade-in-section">
                     <h2 class="font-serif text-4xl md:text-5xl font-bold text-ocean-charcoal">6 Trụ Cột Ẩm Thực</h2>
                     <p class="mt-4 text-lg text-ocean-charcoal/70 max-w-2xl mx-auto leading-relaxed">
@@ -190,10 +196,13 @@
                         </div>
                         <div class="min-h-[400px] card-flip relative">
                             <div class="w-full h-full card-flip-inner">
-                                <!-- Front Face -->
-                                <div class="card-face w-full h-full rounded-2xl shadow-lg flex items-center justify-center p-8 text-white bg-cover bg-center" style="background-image: url('https://placehold.co/600x450/00A86B/F9F9F9?text=Gỏi+Cá+Trích')">
-                                    <div class="absolute inset-0 bg-black/40 rounded-2xl"></div>
-                                    <div class="relative z-10 text-center">
+                                <!-- Front Face with Parallax -->
+                                <div class="card-face w-full h-full rounded-2xl shadow-lg flex items-center justify-center p-8 text-white overflow-hidden relative">
+                                    <!-- Parallax Background Image -->
+                                    <div class="absolute w-full h-[130%] -top-[15%] left-0 bg-cover bg-center parallax-bg will-change-transform" data-speed="0.15" style="background-image: url('https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp')"></div>
+                                    
+                                    <div class="absolute inset-0 bg-black/40 rounded-2xl z-10"></div>
+                                    <div class="relative z-20 text-center">
                                         <i class="fa-solid fa-hand-pointer text-4xl mb-4"></i>
                                         <p class="font-semibold">Lật để xem cách ăn</p>
                                     </div>
@@ -319,28 +328,74 @@
     <!-- Script for animations -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in animation
             const sections = document.querySelectorAll('.fade-in-section');
 
             if (!('IntersectionObserver' in window)) {
                 sections.forEach(section => {
                     section.classList.add('is-visible');
                 });
-                return;
-            }
+            } else {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+        });
+
+        // Parallax Effect
+        document.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            requestAnimationFrame(() => {
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.dataset.speed) || 0.5;
+                    const rect = el.parentElement.getBoundingClientRect();
+                    // Only animate if parent is broadly in view
+                    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                        // Calculate position based on center of viewport
+                        // Center of element relative to center of viewport
+                        const distanceFromCenter = rect.top + rect.height / 2 - window.innerHeight / 2;
+                        // When element is below center, distance is positive. We want background to shift UP (negative translateY) to create depth effect (bg moves slower than fg).
+                        // Actually, to make background move slower than foreground (which moves UP), background needs to translate DOWN (positive) relative to container?
+                        // Let's visualize: Container moves up 10px. We want bg to move up 5px.
+                        // So bg needs to move down 5px relative to container.
+                        // So when scrolling down (content moves up), translateY should be positive.
+                        // Scrolling down -> rect.top decreases (becomes negative).
+                        // So we need an inverse relationship or just factor rect.top.
+                        // Let's stick to a simple rect.top factor.
+                        // If rect.top is positive (lower on screen), yPos should be positive (shifted down).
+                        // If rect.top is negative (higher on screen), yPos should be negative (shifted up).
+                        // This means as it moves up, it shifts up -> moves FASTER?
+                        // No. If container moves up 10px, and we shift bg up 5px, total movement is 15px. Faster.
+                        // We want SLOWER.
+                        // Container moves up 10px. We want bg to move up 5px.
+                        // We need to shift bg DOWN 5px relative to container.
+                        // So as rect.top DECREASES (moves up), translateY should INCREASE (move down).
+                        // So yPos should be inversely related to rect.top? 
+                        // Or just: yPos = (window.innerHeight - rect.top) * speed ?
+                        // Let's try: yPos = (center - distanceFromCenter) * speed.
+                        // Let's just use: yPos = distanceFromCenter * speed * -1.
+                        // If below center (distance > 0), yPos is negative (shift up). 
+                        // If above center (distance < 0), yPos is positive (shift down).
+                        // Container moves UP. distance goes from + to -. yPos goes from - to +.
+                        // yPos increases (moves down).
+                        // Container moves up. BG moves down relative. Net result: BG moves up slower.
+                        // Correct.
+                        
+                        const yPos = distanceFromCenter * speed * -1;
+                        el.style.transform = `translateY(${yPos}px)`;
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
             });
         });
     </script>
