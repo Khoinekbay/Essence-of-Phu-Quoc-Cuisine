@@ -30,7 +30,7 @@
     <style>
         /* Scrollytelling Specific Styles */
         .ingredient-float {
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
         }
     </style>
 </head>
@@ -46,7 +46,7 @@
     </nav>
 
     <!-- Parallax Hero Section -->
-    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <header class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
              <!-- New Hero Image -->
              <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228884/https_i.imgur.com_HpJTKYL_ap2uq3.webp" 
@@ -56,8 +56,8 @@
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
         <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
-            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-lg">Gỏi Cá Trích</h1>
-            <p class="text-xl md:text-2xl font-light italic text-sand-gold">"Hương vị mộc mạc gói trọn hồn biển"</p>
+            <h1 class="text-4xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-lg">Gỏi Cá Trích</h1>
+            <p class="text-lg md:text-2xl font-light italic text-sand-gold">"Hương vị mộc mạc gói trọn hồn biển"</p>
         </div>
     </header>
 
@@ -86,13 +86,13 @@
                 <!-- Khi người dùng cuộn qua phần này, các nguyên liệu sẽ "bay" vào đĩa -->
                 <section id="scrolly-ingredients" class="relative py-20 overflow-hidden bg-white rounded-3xl shadow-lg border border-gray-100">
                     <div class="text-center mb-10">
-                        <h2 class="text-3xl font-playfair font-bold text-ocean-blue">Thành Phần Hảo Hạng</h2>
-                        <p class="text-gray-500">Cuộn xuống để xem sự kết hợp hoàn hảo</p>
+                        <h2 class="text-2xl md:text-3xl font-playfair font-bold text-ocean-blue">Thành Phần Hảo Hạng</h2>
+                        <p class="text-gray-500 text-sm md:text-base">Cuộn xuống để xem sự kết hợp hoàn hảo</p>
                     </div>
 
-                    <div class="relative h-[500px] flex items-center justify-center">
+                    <div class="relative h-[400px] md:h-[500px] flex items-center justify-center">
                         <!-- Central Dish (Static Base) with 9. Water Ripple Effect -->
-                        <div class="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:animate-ripple cursor-pointer" id="main-dish">
+                        <div class="relative z-10 w-48 h-48 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:animate-ripple cursor-pointer" id="main-dish">
                             <!-- New Plated Dish Image -->
                             <img src="https://res.cloudinary.com/dlbrm4bzk/image/upload/v1764228889/https_i.imgur.com_Nwisy71_rprian.webp" alt="Gỏi Cá Trích Hoàn Chỉnh" class="w-full h-full object-cover">
                             <!-- Overlay Hint -->
@@ -102,34 +102,34 @@
                         </div>
 
                         <!-- Flying Ingredient 1: Cá Trích -->
-                        <div class="absolute top-10 left-10 md:left-20 ingredient-float opacity-0 transform -translate-x-20" id="ing-fish">
-                            <div class="w-24 h-24 bg-blue-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
-                                <i class="fas fa-fish text-3xl text-blue-500 mb-1"></i>
-                                <span class="text-xs font-bold text-ocean-charcoal">Cá Tươi</span>
+                        <div class="absolute top-4 left-4 md:top-10 md:left-20 ingredient-float opacity-0" id="ing-fish" style="transform: translateX(-100px);">
+                            <div class="w-16 h-16 md:w-24 md:h-24 bg-blue-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-fish text-xl md:text-3xl text-blue-500 mb-1"></i>
+                                <span class="text-[10px] md:text-xs font-bold text-ocean-charcoal">Cá Tươi</span>
                             </div>
                         </div>
 
                         <!-- Flying Ingredient 2: Dừa Nạo -->
-                        <div class="absolute top-10 right-10 md:right-20 ingredient-float opacity-0 transform translate-x-20" id="ing-coconut">
-                            <div class="w-24 h-24 bg-white rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-gray-200">
-                                <i class="fas fa-circle text-3xl text-gray-200 mb-1"></i> <!-- Fallback icon for coconut flesh -->
-                                <span class="text-xs font-bold text-ocean-charcoal">Dừa Nạo</span>
+                        <div class="absolute top-4 right-4 md:top-10 md:right-20 ingredient-float opacity-0" id="ing-coconut" style="transform: translateX(100px);">
+                            <div class="w-16 h-16 md:w-24 md:h-24 bg-white rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-gray-200">
+                                <i class="fas fa-circle text-xl md:text-3xl text-gray-200 mb-1"></i>
+                                <span class="text-[10px] md:text-xs font-bold text-ocean-charcoal">Dừa Nạo</span>
                             </div>
                         </div>
 
                         <!-- Flying Ingredient 3: Rau Rừng -->
-                        <div class="absolute bottom-10 left-10 md:left-20 ingredient-float opacity-0 transform -translate-x-20 translate-y-20" id="ing-veg">
-                            <div class="w-24 h-24 bg-green-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
-                                <i class="fas fa-leaf text-3xl text-green-500 mb-1"></i>
-                                <span class="text-xs font-bold text-ocean-charcoal">Rau Rừng</span>
+                        <div class="absolute bottom-4 left-4 md:bottom-10 md:left-20 ingredient-float opacity-0" id="ing-veg" style="transform: translate(-100px, 100px);">
+                            <div class="w-16 h-16 md:w-24 md:h-24 bg-green-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-leaf text-xl md:text-3xl text-green-500 mb-1"></i>
+                                <span class="text-[10px] md:text-xs font-bold text-ocean-charcoal">Rau Rừng</span>
                             </div>
                         </div>
 
                         <!-- Flying Ingredient 4: Nước Chấm -->
-                        <div class="absolute bottom-10 right-10 md:right-20 ingredient-float opacity-0 transform translate-x-20 translate-y-20" id="ing-sauce">
-                            <div class="w-24 h-24 bg-orange-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
-                                <i class="fas fa-wine-bottle text-3xl text-orange-500 mb-1"></i>
-                                <span class="text-xs font-bold text-ocean-charcoal">Nước Chấm</span>
+                        <div class="absolute bottom-4 right-4 md:bottom-10 md:right-20 ingredient-float opacity-0" id="ing-sauce" style="transform: translate(100px, 100px);">
+                            <div class="w-16 h-16 md:w-24 md:h-24 bg-orange-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-wine-bottle text-xl md:text-3xl text-orange-500 mb-1"></i>
+                                <span class="text-[10px] md:text-xs font-bold text-ocean-charcoal">Nước Chấm</span>
                             </div>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
 
     <!-- Footer -->
     <footer class="bg-ocean-charcoal text-white py-8 mt-12 text-center">
-        <p class="text-sm opacity-70">&copy; 2025-2026 10C1 THPT An Thới</p>
+        <p class="text-sm opacity-70">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
     </footer>
 
     <!-- Scripts -->
@@ -276,34 +276,21 @@
             observer.observe(section);
         });
 
-        // 4. SCROLLYTELLING LOGIC (The "Magic" part)
-        // We listen to scroll specifically for the ingredients section
+        // 4. SCROLLYTELLING LOGIC (Responsive)
         window.addEventListener('scroll', () => {
             const scrollySection = document.getElementById('scrolly-ingredients');
             if (!scrollySection) return;
 
             const rect = scrollySection.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
+            const isMobile = window.innerWidth < 768;
 
-            // Check if section is in view
             if (rect.top < viewportHeight && rect.bottom > 0) {
-                // Calculate progress (0 to 1) as the user scrolls through the section
-                // We want the effect to complete when the section is centered
                 let progress = 1 - (rect.top + rect.height / 2) / (viewportHeight);
-                
-                // Clamp progress between 0 and 1
                 progress = Math.min(Math.max(progress, 0), 1);
 
-                // Apply transforms based on progress
-                // 0.5 is roughly when the section is in the middle of the screen
                 if (progress > 0.3) {
-                    // Activate elements
-                    activateIngredient('ing-fish', 'translate(-50%, -50%) translate(0,0)'); // Reset to center-ish relative to container? No, reset to original CSS position but remove the translate offset
-                    
-                    // Let's modify the styles directly for smoother control
-                    // Target: Move from offset to 0 (original position defined in CSS)
-                    // Actually, let's make them move TOWARDS the center image
-                    
+                    // Reset positions to center (using initial CSS positioning)
                     document.getElementById('ing-fish').style.opacity = '1';
                     document.getElementById('ing-fish').style.transform = 'translate(0, 0)';
 
@@ -316,21 +303,23 @@
                     document.getElementById('ing-sauce').style.opacity = '1';
                     document.getElementById('ing-sauce').style.transform = 'translate(0, 0)';
                     
-                    // Scale up the main dish slightly
                     document.getElementById('main-dish').style.transform = 'scale(1.1)';
                 } else {
-                    // Reset (Move them back out)
+                    // Move elements away based on screen size
+                    // On mobile, we use smaller values to keep them slightly visible or just fade out
+                    const offset = isMobile ? 50 : 100; 
+                    
                     document.getElementById('ing-fish').style.opacity = '0';
-                    document.getElementById('ing-fish').style.transform = 'translateX(-5rem)';
+                    document.getElementById('ing-fish').style.transform = `translateX(-${offset}px)`;
 
                     document.getElementById('ing-coconut').style.opacity = '0';
-                    document.getElementById('ing-coconut').style.transform = 'translateX(5rem)';
+                    document.getElementById('ing-coconut').style.transform = `translateX(${offset}px)`;
 
                     document.getElementById('ing-veg').style.opacity = '0';
-                    document.getElementById('ing-veg').style.transform = 'translate(-5rem, 5rem)';
+                    document.getElementById('ing-veg').style.transform = `translate(-${offset}px, ${offset}px)`;
 
                     document.getElementById('ing-sauce').style.opacity = '0';
-                    document.getElementById('ing-sauce').style.transform = 'translate(5rem, 5rem)';
+                    document.getElementById('ing-sauce').style.transform = `translate(${offset}px, ${offset}px)`;
                     
                     document.getElementById('main-dish').style.transform = 'scale(1)';
                 }

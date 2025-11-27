@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300 bg-ocean-charcoal shadow-lg">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+            <a href="index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md relative z-50">
                 Phú Quốc <span class="text-sand-gold">Cuisine</span>
             </a>
             <div class="hidden md:flex space-x-8">
@@ -42,6 +42,18 @@
                 <a href="index.html#menu" class="text-white hover:text-sand-gold transition-colors font-medium text-lg">Thực Đơn</a>
                 <a href="#" class="text-sand-gold font-medium text-lg border-b-2 border-sand-gold">Giới Thiệu</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl relative z-50 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="fixed inset-0 bg-ocean-charcoal/95 z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden backdrop-blur-xl">
+            <a href="index.html" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Trang Chủ</a>
+            <a href="index.html#menu" class="mobile-link text-2xl font-playfair text-white hover:text-sand-gold">Thực Đơn</a>
+            <a href="#" class="mobile-link text-2xl font-playfair text-sand-gold border-b-2 border-sand-gold">Giới Thiệu</a>
         </div>
     </nav>
 
@@ -54,12 +66,12 @@
             <div class="absolute inset-0 bg-gradient-to-r from-ocean-charcoal/90 to-ocean-charcoal/40"></div>
         </div>
         <div class="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-white animate-fade-in-up">
-                <span class="text-sand-gold uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Dự án Đại Sứ Văn Hóa</span>
-                <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-6 leading-tight">
+            <div class="text-white animate-fade-in-up text-center lg:text-left">
+                <span class="text-sand-gold uppercase tracking-[0.3em] text-xs md:text-sm font-bold mb-4 block">Dự án Đại Sứ Văn Hóa</span>
+                <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-6 leading-tight">
                     Hơn Cả Một <br/> Website Ẩm Thực
                 </h1>
-                <p class="text-lg text-gray-300 font-light leading-relaxed max-w-lg">
+                <p class="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
                     Một bảo tàng số hóa lưu giữ và lan tỏa các giá trị văn hóa bản địa, khơi dậy niềm tự hào về Đảo Ngọc trong kỷ nguyên số.
                 </p>
             </div>
@@ -74,7 +86,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative fade-in-section" data-animation="slide-right">
                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-sand-gold/20 rounded-full blur-2xl"></div>
-                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop" alt="Văn hóa Việt Nam" class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop" alt="Văn hóa Việt Nam" class="rounded-3xl shadow-2xl relative z-10 w-full h-[300px] md:h-[500px] object-cover">
                     <!-- School Badge Overlay -->
                     <div class="absolute bottom-10 -right-10 bg-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
                         <p class="text-ocean-charcoal font-bold font-playfair text-lg">Trường THPT An Thới</p>
@@ -83,11 +95,11 @@
                 </div>
                 
                 <div class="fade-in-section" data-animation="slide-left">
-                    <h2 class="text-4xl font-playfair font-bold text-ocean-charcoal mb-6">Tầm Nhìn & Sứ Mệnh</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    <h2 class="text-3xl md:text-4xl font-playfair font-bold text-ocean-charcoal mb-6">Tầm Nhìn & Sứ Mệnh</h2>
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
                         Dự án <strong>"Đại sứ văn hóa Phú Quốc"</strong> không đơn thuần là một danh mục món ăn trực tuyến. Trong bối cảnh du lịch trải nghiệm lên ngôi, chúng tôi nhận thấy du khách không chỉ tìm kiếm "ăn gì" mà còn muốn thấu hiểu câu chuyện đằng sau mỗi món ăn.
                     </p>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
                         Đây là một nỗ lực giáo dục mang tính chiến lược của <strong>Trường THPT An Thới</strong> nhằm kết hợp công nghệ hiện đại để bảo tồn di sản. Mỗi đường link, mỗi hình ảnh là một "đại sứ số", kể câu chuyện riêng biệt nhưng hòa quyện trong tổng thể văn hóa Đảo Ngọc.
                     </p>
                     
@@ -116,7 +128,7 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16 fade-in-section" data-animation="slide-down">
                     <span class="text-sand-gold uppercase tracking-widest text-sm font-bold">Chủ Đề Cuộc Thi</span>
-                    <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-3">4 Trụ Cột Phát Triển</h2>
+                    <h2 class="text-3xl md:text-5xl font-playfair font-bold mt-3">4 Trụ Cột Phát Triển</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -165,7 +177,7 @@
     <footer class="bg-ocean-charcoal text-white py-12 relative text-center">
         <div class="container mx-auto px-6 relative z-10">
             <h3 class="text-2xl font-playfair font-bold mb-4 text-sand-gold">Phú Quốc Cuisine</h3>
-            <p class="text-gray-400 mb-8 max-w-lg mx-auto">&copy; 2025-2026 10C1 THPT An Thới</p>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto text-sm">&copy; 2025-2026 10C1 THPT An Thới. Designed with Khởiisthebad.</p>
             <a href="index.html" class="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-ocean-charcoal transition-all font-bold">
                 Trở Về Trang Chủ
             </a>
@@ -173,6 +185,32 @@
     </footer>
 
     <script>
+        // --- Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
         // Scroll Animation Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
