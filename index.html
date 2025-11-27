@@ -35,6 +35,14 @@
             }
         }
     </script>
+<script type="importmap">
+{
+  "imports": {
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4"
+  }
+}
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-quicksand overflow-x-hidden">
 
@@ -94,7 +102,8 @@
             <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
                 Hành trình ẩm thực đánh thức mọi giác quan, từ vị mặn mòi của biển cả đến hương thơm nồng nàn của tiêu và rượu sim.
             </p>
-            <!-- 11. Bouncy/Shimmer Buttons -->
+            
+            <!-- Removed Video Button, Kept CTA -->
             <div class="flex flex-col md:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
                 <a href="#menu" class="btn-shimmer btn-bounce-hover group bg-sand-gold text-ocean-charcoal px-8 py-3 rounded-full font-bold text-lg hover:bg-white transition-all transform shadow-[0_0_20px_rgba(194,178,128,0.5)] flex items-center justify-center">
                     <span>Khám Phá Ngay</span>
@@ -130,7 +139,7 @@
                 
                 <!-- 6. Card Hover Effect (Overlay & Link Icon) -->
                 <!-- Bún Quậy (Large) -->
-                <a href="./mon-an/bun-quay.html" class="group relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" data-animation="fade-in-up">
+                <a href="mon-an/bun-quay.html" class="group relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" data-animation="fade-in-up">
                     <img src="https://i.imgur.com/8PloLCu.png" loading="lazy" alt="Bún Quậy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
                     
@@ -150,7 +159,7 @@
                 </a>
 
                 <!-- Gỏi Cá Trích (Tall) -->
-                <a href="./mon-an/goi-ca-trich.html" class="group relative md:col-span-1 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 100ms;" data-animation="slide-left">
+                <a href="mon-an/goi-ca-trich.html" class="group relative md:col-span-1 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 100ms;" data-animation="slide-left">
                     <img src="https://i.imgur.com/Nwisy71.png" loading="lazy" alt="Gỏi Cá Trích" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                      <!-- New Hover Icon Overlay -->
@@ -169,7 +178,7 @@
                 </a>
 
                 <!-- Bún Kèn (Standard) -->
-                <a href="./mon-an/bun-ken.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 200ms;" data-animation="zoom-in-scroll">
+                <a href="mon-an/bun-ken.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 200ms;" data-animation="zoom-in-scroll">
                     <img src="https://i.imgur.com/HDqFlFh.png" loading="lazy" alt="Bún Kèn" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
@@ -179,7 +188,7 @@
                 </a>
 
                 <!-- Ghẹ Hàm Ninh (Standard) -->
-                <a href="./mon-an/ghe-ham-ninh.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 300ms;" data-animation="zoom-in-scroll">
+                <a href="mon-an/ghe-ham-ninh.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 300ms;" data-animation="zoom-in-scroll">
                     <img src="https://i.imgur.com/o62oSWi.png" loading="lazy" alt="Ghẹ Hàm Ninh" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
@@ -189,7 +198,7 @@
                 </a>
 
                 <!-- Nhum Biển (Standard) -->
-                <a href="./mon-an/nhum-bien.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 400ms;" data-animation="slide-right">
+                <a href="mon-an/nhum-bien.html" class="group relative rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 400ms;" data-animation="slide-right">
                     <img src="https://i.imgur.com/m4EXPF3.png" loading="lazy" alt="Nhum Biển" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
@@ -199,7 +208,7 @@
                 </a>
 
                 <!-- Gà Rẫy (Wide) -->
-                <a href="./mon-an/ga-ray.html" class="group relative md:col-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 500ms;" data-animation="fade-in-up">
+                <a href="mon-an/ga-ray.html" class="group relative md:col-span-2 rounded-3xl overflow-hidden shadow-2xl fade-in-section block cursor-pointer" style="transition-delay: 500ms;" data-animation="fade-in-up">
                     <img src="https://i.imgur.com/kU5udi4.png" loading="lazy" alt="Gà Rẫy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
                      <!-- New Hover Icon Overlay -->
@@ -264,7 +273,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Món bún tươi làm tại chỗ, nước chấm tự pha, hương vị độc bản của Phú Quốc.</p>
                 <div class="flex gap-3">
-                    <a href="./mon-an/bun-quay.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/bun-quay.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -285,7 +294,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Sự kết hợp tươi ngon của cá trích, dừa nạo và rau rừng.</p>
                 <div class="flex gap-3">
-                    <a href="./mon-an/goi-ca-trich.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/goi-ca-trich.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -306,7 +315,7 @@
                 </div>
                 <p class="text-gray-600 text-sm mb-6">Vị béo ngậy của nước cốt dừa và cá xay nhuyễn đặc trưng.</p>
                 <div class="flex gap-3">
-                    <a href="./mon-an/bun-ken.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/bun-ken.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -323,7 +332,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Ghẹ Hàm Ninh</h3>
                 <p class="text-gray-600 text-sm mb-6">Ghẹ chắc thịt, ngọt tự nhiên, nổi tiếng nhất đảo.</p>
                  <div class="flex gap-3">
-                    <a href="./mon-an/ghe-ham-ninh.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/ghe-ham-ninh.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -339,7 +348,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Nhum Biển (Cầu Gai)</h3>
                 <p class="text-gray-600 text-sm mb-6">Đặc sản bổ dưỡng, thường ăn sống với mù tạt hoặc nướng mỡ hành.</p>
                  <div class="flex gap-3">
-                    <a href="./mon-an/nhum-bien.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/nhum-bien.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                      <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
@@ -355,7 +364,7 @@
                 <h3 class="text-2xl font-bold font-playfair text-ocean-charcoal mb-2">Gà Rẫy Phú Quốc</h3>
                 <p class="text-gray-600 text-sm mb-6">Thịt gà mềm ngọt, da giòn, chế biến món miến gà hoặc gà hấp.</p>
                  <div class="flex gap-3">
-                    <a href="./mon-an/ga-ray.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
+                    <a href="mon-an/ga-ray.html" class="flex-1 bg-ocean-blue text-white py-2 rounded-lg text-center font-bold hover:bg-ocean-teal transition-colors">Xem Chi Tiết</a>
                     <a href="https://maps.google.com" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg text-center font-bold hover:bg-gray-50 transition-colors">Chỉ Đường</a>
                 </div>
             </div>
