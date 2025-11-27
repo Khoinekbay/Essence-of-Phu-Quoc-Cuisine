@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gỏi Cá Trích - Tinh Hoa Đảo Ngọc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'sand-gold': '#C2B280',
+                        'tropical-green': '#2E8B57',
+                        'ocean-charcoal': '#1a202c',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Scrollytelling Specific Styles */
+        .ingredient-float {
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-quicksand">
+
+    <!-- Navigation (Simplified for sub-page) -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> Trở về
+            </a>
+        </div>
+    </nav>
+
+    <!-- Parallax Hero Section -->
+    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1599021406635-c3f25574514a?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Gỏi Cá Trích Background" 
+                  class="parallax-bg w-full h-full object-cover"
+                  data-speed="0.5"> <!-- Parallax Speed Control -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-lg">Gỏi Cá Trích</h1>
+            <p class="text-xl md:text-2xl font-light italic text-sand-gold">"Hương vị mộc mạc gói trọn hồn biển"</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Left Column: Story & Details -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Intro Section -->
+                <section class="fade-in-section" data-animation="slide-up">
+                    <h2 class="text-3xl font-playfair font-bold text-ocean-charcoal mb-6 border-l-4 border-sand-gold pl-4">Câu Chuyện Món Ăn</h2>
+                    <p class="text-lg leading-relaxed text-gray-600 mb-4">
+                        Không cầu kỳ trong chế biến nhưng lại tinh tế trong cách thưởng thức, gỏi cá trích là sự giao thoa giữa biển và rừng. 
+                        Cá trích tươi sống được đánh bắt từ sớm tinh mơ, lóc bỏ xương, lấy phần thịt hai bên lườn rồi trộn đều với nước cốt chanh, 
+                        dừa nạo, hành tây và đậu phộng rang.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-600">
+                        Điều làm nên linh hồn của món ăn chính là nước chấm làm từ giấm nuôi ổi chín, tỏi ớt băm nhuyễn và đậu phộng giã nhỏ, 
+                        tạo nên vị chua thanh, cay nồng khó cưỡng.
+                    </p>
+                </section>
+
+                <!-- SCROLLYTELLING SECTION: Ingredients Assembly -->
+                <!-- Khi người dùng cuộn qua phần này, các nguyên liệu sẽ "bay" vào đĩa -->
+                <section id="scrolly-ingredients" class="relative py-20 overflow-hidden bg-white rounded-3xl shadow-lg border border-gray-100">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-playfair font-bold text-ocean-blue">Thành Phần Hảo Hạng</h2>
+                        <p class="text-gray-500">Cuộn xuống để xem sự kết hợp hoàn hảo</p>
+                    </div>
+
+                    <div class="relative h-[500px] flex items-center justify-center">
+                        <!-- Central Dish (Static Base) with 9. Water Ripple Effect -->
+                        <div class="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:animate-ripple cursor-pointer" id="main-dish">
+                            <img src="https://i.imgur.com/Nwisy71.png" alt="Gỏi Cá Trích Hoàn Chỉnh" class="w-full h-full object-cover">
+                            <!-- Overlay Hint -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/20">
+                                <span class="text-white font-bold text-sm tracking-widest uppercase">Tươi Ngon</span>
+                            </div>
+                        </div>
+
+                        <!-- Flying Ingredient 1: Cá Trích -->
+                        <div class="absolute top-10 left-10 md:left-20 ingredient-float opacity-0 transform -translate-x-20" id="ing-fish">
+                            <div class="w-24 h-24 bg-blue-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-fish text-3xl text-blue-500 mb-1"></i>
+                                <span class="text-xs font-bold text-ocean-charcoal">Cá Tươi</span>
+                            </div>
+                        </div>
+
+                        <!-- Flying Ingredient 2: Dừa Nạo -->
+                        <div class="absolute top-10 right-10 md:right-20 ingredient-float opacity-0 transform translate-x-20" id="ing-coconut">
+                            <div class="w-24 h-24 bg-white rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-gray-200">
+                                <i class="fas fa-circle text-3xl text-gray-200 mb-1"></i> <!-- Fallback icon for coconut flesh -->
+                                <span class="text-xs font-bold text-ocean-charcoal">Dừa Nạo</span>
+                            </div>
+                        </div>
+
+                        <!-- Flying Ingredient 3: Rau Rừng -->
+                        <div class="absolute bottom-10 left-10 md:left-20 ingredient-float opacity-0 transform -translate-x-20 translate-y-20" id="ing-veg">
+                            <div class="w-24 h-24 bg-green-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-leaf text-3xl text-green-500 mb-1"></i>
+                                <span class="text-xs font-bold text-ocean-charcoal">Rau Rừng</span>
+                            </div>
+                        </div>
+
+                        <!-- Flying Ingredient 4: Nước Chấm -->
+                        <div class="absolute bottom-10 right-10 md:right-20 ingredient-float opacity-0 transform translate-x-20 translate-y-20" id="ing-sauce">
+                            <div class="w-24 h-24 bg-orange-100 rounded-full flex flex-col items-center justify-center shadow-lg border-2 border-white">
+                                <i class="fas fa-wine-bottle text-3xl text-orange-500 mb-1"></i>
+                                <span class="text-xs font-bold text-ocean-charcoal">Nước Chấm</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interactive How-to-Eat (Flip Card) -->
+                <section class="fade-in-section" data-animation="fade-in-up">
+                    <h2 class="text-3xl font-playfair font-bold text-ocean-charcoal mb-6 border-l-4 border-sand-gold pl-4">Cách Thưởng Thức</h2>
+                    <div class="w-full h-80 card-flip cursor-pointer group">
+                        <div class="card-flip-inner shadow-2xl rounded-2xl">
+                            <!-- Front -->
+                            <div class="card-face w-full h-full rounded-2xl bg-cover bg-center flex items-center justify-center relative overflow-hidden group">
+                                <img src="https://images.unsplash.com/photo-1621852003848-36a5a92a54b3?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors"></div>
+                                <div class="relative z-10 text-center text-white">
+                                    <i class="fas fa-hand-pointer text-4xl mb-3 animate-bounce"></i>
+                                    <h3 class="text-2xl font-bold font-playfair">Lật Để Xem Bí Quyết</h3>
+                                </div>
+                            </div>
+                            <!-- Back -->
+                            <div class="card-face card-back w-full h-full bg-ocean-charcoal text-white rounded-2xl p-8 flex flex-col justify-center items-center text-center">
+                                <h3 class="text-2xl font-bold text-sand-gold mb-4 font-playfair">Quy Tắc 3 Bước</h3>
+                                <ul class="text-left space-y-3 font-light">
+                                    <li><i class="fas fa-check text-green-400 mr-2"></i> <strong>Bước 1:</strong> Lấy bánh tráng, xếp rau rừng lên trên.</li>
+                                    <li><i class="fas fa-check text-green-400 mr-2"></i> <strong>Bước 2:</strong> Gắp gỏi cá, thêm dừa nạo và một ít hành tây.</li>
+                                    <li><i class="fas fa-check text-green-400 mr-2"></i> <strong>Bước 3:</strong> Cuộn chặt tay, chấm ngập vào bát nước chấm pha tỏi ớt.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sticky Info Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Sticky Container: This element sticks when scrolling -->
+                <div class="sticky top-24 space-y-8 fade-in-section" data-animation="slide-left">
+                    
+                    <!-- Quick Info Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-ocean-blue">
+                        <h3 class="text-2xl font-playfair font-bold text-ocean-charcoal mb-6">Thông Tin</h3>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide">Giá tham khảo</p>
+                                <p class="font-bold text-lg text-ocean-charcoal">150.000đ - 250.000đ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide">Khu vực phổ biến</p>
+                                <p class="font-bold text-ocean-charcoal">Dương Đông, Hàm Ninh</p>
+                            </div>
+                        </div>
+
+                        <a href="../index.html#map-section" class="btn-shimmer btn-bounce-hover block w-full bg-ocean-charcoal text-white text-center py-3 rounded-lg font-bold hover:bg-ocean-blue transition-colors shadow-lg transform hover:-translate-y-1">
+                            Xem Trên Bản Đồ
+                        </a>
+                    </div>
+
+                    <!-- Recommended Places List -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-bold text-gray-800 mb-4 border-b pb-2">Địa Chỉ Uy Tín</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="font-bold text-ocean-blue mr-2">01.</span>
+                                <div>
+                                    <p class="font-bold text-sm">Nhà hàng Vườn Táo</p>
+                                    <p class="text-xs text-gray-500">Nổi tiếng với nước chấm gia truyền.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-ocean-blue mr-2">02.</span>
+                                <div>
+                                    <p class="font-bold text-sm">Quán Ra Khơi</p>
+                                    <p class="text-xs text-gray-500">Hải sản tươi sống, không gian rộng.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-ocean-blue mr-2">03.</span>
+                                <div>
+                                    <p class="font-bold text-sm">Nhà hàng Sông Xanh</p>
+                                    <p class="text-xs text-gray-500">View sông thoáng mát.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-charcoal text-white py-8 mt-12 text-center">
+        <p class="text-sm opacity-70">&copy; 2024 Essence of Phu Quoc Cuisine</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Navbar Scroll Effect
+        document.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-ocean-charcoal', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-ocean-charcoal', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // 2. Parallax Effect for Hero Image
+        window.addEventListener('scroll', () => {
+            const parallaxBg = document.querySelector('.parallax-bg');
+            if (parallaxBg) {
+                const speed = 0.5;
+                parallaxBg.style.transform = `translateY(${window.scrollY * speed}px)`;
+            }
+        });
+
+        // 3. General Intersection Observer for Fade-ins
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 4. SCROLLYTELLING LOGIC (The "Magic" part)
+        // We listen to scroll specifically for the ingredients section
+        window.addEventListener('scroll', () => {
+            const scrollySection = document.getElementById('scrolly-ingredients');
+            if (!scrollySection) return;
+
+            const rect = scrollySection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            // Check if section is in view
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+                // Calculate progress (0 to 1) as the user scrolls through the section
+                // We want the effect to complete when the section is centered
+                let progress = 1 - (rect.top + rect.height / 2) / (viewportHeight);
+                
+                // Clamp progress between 0 and 1
+                progress = Math.min(Math.max(progress, 0), 1);
+
+                // Apply transforms based on progress
+                // 0.5 is roughly when the section is in the middle of the screen
+                if (progress > 0.3) {
+                    // Activate elements
+                    activateIngredient('ing-fish', 'translate(-50%, -50%) translate(0,0)'); // Reset to center-ish relative to container? No, reset to original CSS position but remove the translate offset
+                    
+                    // Let's modify the styles directly for smoother control
+                    // Target: Move from offset to 0 (original position defined in CSS)
+                    // Actually, let's make them move TOWARDS the center image
+                    
+                    document.getElementById('ing-fish').style.opacity = '1';
+                    document.getElementById('ing-fish').style.transform = 'translate(0, 0)';
+
+                    document.getElementById('ing-coconut').style.opacity = '1';
+                    document.getElementById('ing-coconut').style.transform = 'translate(0, 0)';
+
+                    document.getElementById('ing-veg').style.opacity = '1';
+                    document.getElementById('ing-veg').style.transform = 'translate(0, 0)';
+
+                    document.getElementById('ing-sauce').style.opacity = '1';
+                    document.getElementById('ing-sauce').style.transform = 'translate(0, 0)';
+                    
+                    // Scale up the main dish slightly
+                    document.getElementById('main-dish').style.transform = 'scale(1.1)';
+                } else {
+                    // Reset (Move them back out)
+                    document.getElementById('ing-fish').style.opacity = '0';
+                    document.getElementById('ing-fish').style.transform = 'translateX(-5rem)';
+
+                    document.getElementById('ing-coconut').style.opacity = '0';
+                    document.getElementById('ing-coconut').style.transform = 'translateX(5rem)';
+
+                    document.getElementById('ing-veg').style.opacity = '0';
+                    document.getElementById('ing-veg').style.transform = 'translate(-5rem, 5rem)';
+
+                    document.getElementById('ing-sauce').style.opacity = '0';
+                    document.getElementById('ing-sauce').style.transform = 'translate(5rem, 5rem)';
+                    
+                    document.getElementById('main-dish').style.transform = 'scale(1)';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bún Quậy - Tinh Hoa Đảo Ngọc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'sand-gold': '#C2B280',
+                        'tropical-green': '#2E8B57',
+                        'ocean-charcoal': '#1a202c',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-quicksand">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> Trở về
+            </a>
+        </div>
+    </nav>
+
+    <!-- Parallax Hero Section with 8. Steam Animation -->
+    <header class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Bún Quậy Background" 
+                  class="parallax-bg w-full h-full object-cover"
+                  data-speed="0.5">
+            <div class="absolute inset-0 bg-black/50"></div>
+            
+            <!-- Steam Effect Container -->
+            <div class="steam-container z-10 opacity-70">
+                <div class="steam" style="left: 45%; animation-delay: 0s;"></div>
+                <div class="steam" style="left: 50%; animation-delay: 1s;"></div>
+                <div class="steam" style="left: 55%; animation-delay: 2s;"></div>
+            </div>
+        </div>
+        <div class="relative z-20 text-center text-white px-4 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-lg">Bún Quậy</h1>
+            <p class="text-xl md:text-2xl font-light italic text-sand-gold">"Tự tay làm, tự tay ăn - Trải nghiệm có một không hai"</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left: Description -->
+            <div class="fade-in-section" data-animation="slide-right">
+                <h2 class="text-3xl font-playfair font-bold text-ocean-charcoal mb-6 border-l-4 border-sand-gold pl-4">Câu Chuyện Bún Quậy</h2>
+                <p class="text-lg leading-relaxed text-gray-600 mb-4">
+                    Bún Quậy là đặc sản trứ danh của Phú Quốc, bắt nguồn từ món bún tôm Bình Định. Tên gọi "Quậy" xuất phát từ hành động người đầu bếp phải quậy mạnh tôm cá xay nhuyễn trong tô nước lèo đang sôi sục để làm chín.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-600 mb-4">
+                    Sợi bún được ép trực tiếp từ bột gạo ngay tại quán, rơi thẳng vào nồi nước sôi. Nước dùng trong veo, ngọt thanh tự nhiên từ hải sản mà không cần hầm xương.
+                </p>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-2 border-ocean-blue mt-8">
+                    <h3 class="font-bold text-xl mb-4 text-ocean-blue"><i class="fas fa-info-circle mr-2"></i> Địa Chỉ Ngon</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-map-pin text-red-500 mr-2"></i> <strong>Bún Quậy Kiến Xây:</strong> 28 Bạch Đằng, Dương Đông</li>
+                        <li><i class="fas fa-map-pin text-red-500 mr-2"></i> <strong>Bún Quậy Thanh Hùng:</strong> Đường 30/4, Dương Đông</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right: 7. Sauce Mixing Minigame -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 fade-in-section" data-animation="zoom-in-scroll">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-playfair font-bold text-ocean-charcoal">Minigame: Pha Nước Chấm</h3>
+                    <p class="text-gray-500 text-sm">Hãy tự tay pha bát nước chấm "thần thánh" theo tỷ lệ vàng!</p>
+                </div>
+
+                <!-- Visual Representation -->
+                <div class="flex justify-center mb-8 relative">
+                    <div id="sauce-bowl" class="w-40 h-40 rounded-full border-4 border-gray-300 shadow-inner flex items-center justify-center transition-colors duration-300 relative overflow-hidden" style="background-color: #f3f4f6;">
+                        <span id="sauce-result-text" class="font-bold text-gray-400 text-sm">Chưa pha</span>
+                        <!-- Liquid Reflection -->
+                        <div class="absolute top-2 right-4 w-8 h-4 bg-white/40 rounded-full transform -rotate-45"></div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <label class="font-bold text-red-500"><i class="fas fa-pepper-hot"></i> Ớt Xay</label>
+                            <span id="chili-val" class="text-gray-500 text-sm">0%</span>
+                        </div>
+                        <input type="range" id="chili-slider" min="0" max="100" value="0" class="w-full accent-red-500">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <label class="font-bold text-yellow-500"><i class="fas fa-lemon"></i> Tắc (Quất)</label>
+                            <span id="kumquat-val" class="text-gray-500 text-sm">0%</span>
+                        </div>
+                        <input type="range" id="kumquat-slider" min="0" max="100" value="0" class="w-full accent-yellow-500">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <label class="font-bold text-gray-400"><i class="fas fa-cube"></i> Đường/Muối</label>
+                            <span id="sugar-val" class="text-gray-500 text-sm">0%</span>
+                        </div>
+                        <input type="range" id="sugar-slider" min="0" max="100" value="0" class="w-full accent-gray-400">
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <p id="feedback-msg" class="text-sm italic text-ocean-blue min-h-[20px]"></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-charcoal text-white py-8 mt-12 text-center">
+        <p class="text-sm opacity-70">&copy; 2024 Essence of Phu Quoc Cuisine</p>
+    </footer>
+
+    <script>
+        // Parallax script reuse
+        window.addEventListener('scroll', () => {
+            const parallaxBg = document.querySelector('.parallax-bg');
+            if (parallaxBg) {
+                const speed = 0.5;
+                parallaxBg.style.transform = `translateY(${window.scrollY * speed}px)`;
+            }
+        });
+
+        // 7. Minigame Logic
+        const chiliSlider = document.getElementById('chili-slider');
+        const kumquatSlider = document.getElementById('kumquat-slider');
+        const sugarSlider = document.getElementById('sugar-slider');
+        const bowl = document.getElementById('sauce-bowl');
+        const resultText = document.getElementById('sauce-result-text');
+        const feedback = document.getElementById('feedback-msg');
+
+        function updateSauce() {
+            const c = parseInt(chiliSlider.value);
+            const k = parseInt(kumquatSlider.value);
+            const s = parseInt(sugarSlider.value);
+
+            // Update UI values
+            document.getElementById('chili-val').innerText = c + '%';
+            document.getElementById('kumquat-val').innerText = k + '%';
+            document.getElementById('sugar-val').innerText = s + '%';
+
+            // Mix Color Calculation (Simple approximation)
+            // Chili adds Red, Kumquat adds Orange/Yellow, Sugar adds White/Lightness
+            const r = Math.min(255, 240 + (c * 0.1)); // Base light grey -> Redish
+            const g = Math.min(255, 240 - (c * 1.5) + (k * 1.5)); // Red reduces Green, Yellow adds Green
+            const b = Math.min(255, 240 - (c * 1.5) - (k * 0.5)); // Reduce Blue
+
+            // Opacity/Saturation logic based on amount
+            const total = c + k + s;
+            
+            if (total < 10) {
+                bowl.style.backgroundColor = '#f3f4f6';
+                resultText.innerText = "Chưa pha";
+                resultText.style.color = "#9ca3af";
+                feedback.innerText = "Hãy thêm nguyên liệu!";
+            } else {
+                bowl.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                resultText.innerText = "";
+                
+                // Feedback Logic
+                if (c > 70) feedback.innerText = "Ái chà! Cay xé lưỡi rồi!";
+                else if (k > 70) feedback.innerText = "Chua quá bạn ơi!";
+                else if (c > 30 && c < 60 && k > 30 && k < 60 && s > 30) feedback.innerText = "Tuyệt vời! Tỷ lệ vàng!";
+                else feedback.innerText = "Tiếp tục điều chỉnh nhé...";
+            }
+        }
+
+        [chiliSlider, kumquatSlider, sugarSlider].forEach(input => {
+            input.addEventListener('input', updateSauce);
+        });
+    </script>
+</body>
+</html>
