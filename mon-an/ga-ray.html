@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gà Rẫy - Tinh Hoa Đảo Ngọc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'forest-green': '#2F5233',
+                        'earth-brown': '#5d4037',
+                        'sand-gold': '#C2B280',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#fcfbf7] text-gray-800 font-quicksand">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> Trở về
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[65vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1543353071-087f9fb536e0?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Gà Rẫy Phú Quốc" 
+                  class="parallax-bg w-full h-full object-cover grayscale-[30%]"
+                  data-speed="0.5">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-green/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-2xl">Gà Rẫy Phú Quốc</h1>
+            <p class="text-xl md:text-2xl font-light italic text-sand-gold">"Hương vị núi rừng giữa lòng biển đảo"</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        
+        <div class="max-w-5xl mx-auto">
+            <!-- Feature Grid (Top) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 fade-in-section" data-animation="slide-up">
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-forest-green hover:shadow-2xl transition-shadow">
+                    <div class="w-14 h-14 bg-forest-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-forest-green text-2xl">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Ngủ Trên Cây</h3>
+                    <p class="text-sm text-gray-600">Gà được thả rông hoàn toàn trong vườn tiêu, vườn điều, tối ngủ trên cây nên thịt rất săn chắc.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-earth-brown hover:shadow-2xl transition-shadow">
+                    <div class="w-14 h-14 bg-earth-brown/10 rounded-full flex items-center justify-center mx-auto mb-4 text-earth-brown text-2xl">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Thức Ăn Tự Nhiên</h3>
+                    <p class="text-sm text-gray-600">Gà tự kiếm ăn mối, côn trùng và lúa ngô, không dùng thức ăn công nghiệp.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center border-t-4 border-sand-gold hover:shadow-2xl transition-shadow">
+                    <div class="w-14 h-14 bg-sand-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 text-sand-gold text-2xl">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Vị Ngọt Đậm</h3>
+                    <p class="text-sm text-gray-600">Da giòn, ít mỡ, thịt ngọt và thơm hơn gà ta thường, nhưng mềm hơn gà nòi.</p>
+                </div>
+            </div>
+
+            <!-- Main Content & Image -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-section" data-animation="slide-right">
+                     <h2 class="text-3xl font-playfair font-bold text-forest-green mb-6">Món Ngon Từ Gà Rẫy</h2>
+                     <p class="text-gray-700 leading-relaxed mb-6">
+                         Nếu hải sản đã khiến bạn "ngán", Gà Rẫy là lựa chọn đổi vị tuyệt vời. Thịt gà mềm ngọt, lớp da giòn sần sật được chế biến thành nhiều món hấp dẫn:
+                     </p>
+                     
+                     <div class="space-y-4">
+                         <div class="flex items-center p-4 bg-white rounded-lg shadow-sm">
+                             <img src="https://i.imgur.com/kU5udi4.png" class="w-16 h-16 rounded-lg object-cover mr-4">
+                             <div>
+                                 <h4 class="font-bold text-earth-brown">Gà Hấp Nước Mắm</h4>
+                                 <p class="text-xs text-gray-500">Giữ nguyên vị ngọt, thơm lừng nước mắm Phú Quốc.</p>
+                             </div>
+                         </div>
+                         <div class="flex items-center p-4 bg-white rounded-lg shadow-sm">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center mr-4 text-gray-400">
+                                <i class="fas fa-bowl-food text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-earth-brown">Miến Gà Rẫy</h4>
+                                <p class="text-xs text-gray-500">Nước dùng thanh ngọt, miến dai, thịt gà xé phay.</p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+                <div class="relative fade-in-section" data-animation="zoom-in-scroll">
+                    <!-- Rustic Image Frame -->
+                    <div class="border-8 border-white shadow-2xl rotate-3 transform hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-lg">
+                         <img src="https://i.imgur.com/kU5udi4.png" class="w-full h-auto object-cover scale-110 hover:scale-100 transition-transform duration-700">
+                    </div>
+                    <!-- Leaf decoration -->
+                    <i class="fas fa-leaf text-forest-green text-6xl absolute -top-8 -right-8 opacity-20 transform rotate-45"></i>
+                </div>
+            </div>
+
+            <!-- Recommendation Box -->
+             <div class="mt-16 bg-gradient-to-r from-forest-green to-teal-800 rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between shadow-2xl fade-in-section" data-animation="slide-up">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-playfair font-bold mb-2">Thưởng Thức Ở Đâu?</h3>
+                    <p class="opacity-90">Những quán ăn gia truyền ngon nhất đảo.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="../index.html#map-section" class="bg-white text-forest-green font-bold py-3 px-6 rounded-full hover:bg-sand-gold hover:text-white transition-colors">
+                        <i class="fas fa-map-marked-alt mr-2"></i>Xem Bản Đồ
+                    </a>
+                </div>
+             </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-earth-brown text-white py-8 mt-12 text-center">
+        <p class="text-sm opacity-70">&copy; 2024 Essence of Phu Quoc Cuisine</p>
+    </footer>
+
+    <script>
+        // Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Parallax
+        window.addEventListener('scroll', () => {
+            const bg = document.querySelector('.parallax-bg');
+            if(bg) bg.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>

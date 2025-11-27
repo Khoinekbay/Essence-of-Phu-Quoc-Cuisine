@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bún Kèn - Tinh Hoa Đảo Ngọc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#006994',
+                        'sand-gold': '#C2B280',
+                        'tropical-green': '#2E8B57',
+                        'ocean-charcoal': '#1a202c',
+                        'ken-yellow': '#EFA515',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'quicksand': ['"Quicksand"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-amber-50 text-gray-800 font-quicksand">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-playfair font-bold text-white tracking-widest uppercase drop-shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> Trở về
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1631701119265-33ca2b30ee55?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Bún Kèn Background" 
+                  class="parallax-bg w-full h-full object-cover"
+                  data-speed="0.5">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 drop-shadow-lg text-ken-yellow">Bún Kèn</h1>
+            <p class="text-xl md:text-2xl font-light italic text-white">"Vị ngọt của cá, vị béo của dừa, màu vàng của nghệ"</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Content -->
+            <div class="space-y-6 fade-in-section" data-animation="slide-right">
+                <h2 class="text-3xl font-playfair font-bold text-ocean-charcoal border-l-4 border-ken-yellow pl-4">Độc Đáo Ẩm Thực Đảo</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Bún Kèn (hay Bún Khèn) là món điểm tâm sáng dân dã nhưng vô cùng đặc biệt tại Phú Quốc. Khác với Bún Kèn ở đất liền (thường dùng cá lóc), Bún Kèn Phú Quốc sử dụng <strong>cá nhàu hoặc cá ngân</strong> - những loại cá biển tươi ngon đánh bắt ngay tại đảo.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Cá được xay nhuyễn rồi xào với sả, ớt, tỏi, ngũ vị hương và đặc biệt là <strong>nước cốt dừa</strong> béo ngậy cùng màu vàng ươm bắt mắt của nghệ.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-ken-yellow">
+                        <i class="fas fa-fish text-2xl text-ocean-blue mb-2"></i>
+                        <h4 class="font-bold text-gray-800">Cá Biển Xay</h4>
+                        <p class="text-sm text-gray-500">Thịt ngọt, dai, thơm mùi biển.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-ken-yellow">
+                        <i class="fas fa-tint text-2xl text-white drop-shadow-md mb-2" style="color: #EFA515"></i>
+                        <h4 class="font-bold text-gray-800">Nước Cốt Dừa</h4>
+                        <p class="text-sm text-gray-500">Béo ngậy, sệt sệt đặc trưng.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image/Visual -->
+            <div class="relative fade-in-section" data-animation="zoom-in-scroll">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-ken-yellow/20 rounded-full blur-3xl -z-10"></div>
+                <img src="https://i.imgur.com/HDqFlFh.png" alt="Tô Bún Kèn" class="w-full rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white">
+                
+                <!-- Floating Card -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl max-w-xs animate-bounce-slow">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-ken-yellow text-white flex items-center justify-center font-bold">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Gợi ý địa điểm</p>
+                            <p class="font-bold text-ocean-charcoal">Bún Kèn Út Lượm</p>
+                            <p class="text-xs text-gray-400">Đường 30/4, Dương Đông</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Recipe/Components Breakdown -->
+        <section class="mt-20 fade-in-section" data-animation="slide-up">
+            <h3 class="text-center text-2xl font-playfair font-bold mb-10">Trong Một Tô Bún Có Gì?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl"><i class="fas fa-leaf"></i></div>
+                    <h4 class="font-bold mb-2">Rau Sống</h4>
+                    <p class="text-sm text-gray-500">Đu đủ bào, rau thơm, dưa leo giòn rụm.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 text-yellow-600 text-2xl"><i class="fas fa-bacon"></i></div> <!-- Icon symbol for noodle strand -->
+                    <h4 class="font-bold mb-2">Bún Tươi</h4>
+                    <p class="text-sm text-gray-500">Sợi bún nhỏ, trắng ngần, dai mềm.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-orange-600 text-2xl"><i class="fas fa-mug-hot"></i></div>
+                    <h4 class="font-bold mb-2">Nước Lèo</h4>
+                    <p class="text-sm text-gray-500">Cá xay nhuyễn nấu cùng cốt dừa và nghệ.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600 text-2xl"><i class="fas fa-pepper-hot"></i></div>
+                    <h4 class="font-bold mb-2">Gia Vị</h4>
+                    <p class="text-sm text-gray-500">Chút nước mắm ngọt và ớt cay nồng.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-charcoal text-white py-8 mt-12 text-center">
+        <p class="text-sm opacity-70">&copy; 2024 Essence of Phu Quoc Cuisine</p>
+    </footer>
+
+    <script>
+        // Scroll Animation Logic (Reuse)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const anim = entry.target.dataset.animation || 'fade-in-up';
+                    entry.target.classList.add(`animate-${anim}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Parallax
+        window.addEventListener('scroll', () => {
+            const bg = document.querySelector('.parallax-bg');
+            if(bg) bg.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
